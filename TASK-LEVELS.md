@@ -34,11 +34,13 @@
 
 ### L3 复杂或高风险项目
 
+- 从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始，使用完整正规流程。
 - `PRD.md`：需求意图与验收基线。
 - `SDD.md`：关键设计、失败处理和兼容回滚。
 - `TEST-PLAN.md`：跨层验证、专项测试和发布条件。
+- `DELIVERY.md`：最终实现、测试结果、偏移、Align 和交付决定的唯一汇总。
 - `ADR`：仅用于重大且难逆的决策。
-- Align 对齐 PRD、SDD、ADR、可执行契约和测试证据；仅高风险或审计场景要求独立记录。
+- Align 对齐 PRD、SDD、ADR、可执行契约和测试证据；默认记录在 DELIVERY，仅独立审计场景另建 ALIGNMENT-GATE。
 - 客户端、服务端或子系统文档只有在单份 SDD 已影响阅读和评审时才拆分。
 
 ## 4. 快速判断

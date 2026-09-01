@@ -49,7 +49,10 @@ $requiredFiles = @(
     'AGENTS.md',
     'AI-PLAYBOOK.md',
     'templates/DELIVERY-CHECKLIST.md',
+    'templates/DELIVERY.md',
     'templates/ALIGNMENT-GATE.md',
+    'templates/FORMAL-FEATURE/README.md',
+    'examples/L3-complex-feature/DELIVERY.md',
     'prompts/NEW-TASK.md',
     'prompts/CONTINUE-TASK.md',
     'prompts/ALIGN-GATE.md',
@@ -77,6 +80,36 @@ if ($sop.IndexOf('## 8. Align') -lt 0 -or $sop.IndexOf('## 9. Done') -lt 0 -or
 $alignPrompt = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'prompts/ALIGN-GATE.md')
 if ($alignPrompt -notmatch '无法访问必要实现或测试证据') {
     $issues.Add('Align prompt must fail when executable evidence is unavailable.')
+}
+
+$formalTemplates = @(
+    'templates/PRD.md',
+    'templates/SDD.md',
+    'templates/TEST-PLAN.md',
+    'templates/DELIVERY.md'
+)
+
+foreach ($relativePath in $formalTemplates) {
+    $content = Get-Content -Raw -LiteralPath (Join-Path $repoRoot $relativePath)
+    if ($content -notmatch '\[必填\]') {
+        $issues.Add("Formal template must mark required sections: $relativePath")
+    }
+}
+
+$testPlan = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/TEST-PLAN.md')
+if ($testPlan -notmatch '实际执行结果统一写入 `DELIVERY\.md`') {
+    $issues.Add('TEST-PLAN must route actual execution results to DELIVERY.md.')
+}
+
+$delivery = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/DELIVERY.md')
+if ($delivery -notmatch '# 8\. Align Gate \[必填\]' -or
+    $delivery -notmatch '# 9\. 最终交付决定 \[必填\]') {
+    $issues.Add('DELIVERY must contain the required Align Gate and final delivery decision.')
+}
+
+$taskLevels = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'TASK-LEVELS.md')
+if ($taskLevels -notmatch '`DELIVERY\.md`：最终实现、测试结果、偏移、Align 和交付决定的唯一汇总') {
+    $issues.Add('L3 minimum artifacts must include DELIVERY.md.')
 }
 
 if ($issues.Count -gt 0) {

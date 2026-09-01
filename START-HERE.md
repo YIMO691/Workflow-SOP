@@ -11,6 +11,8 @@
 5. 你只确认需求意图、范围、风险和 AI 无法从工程发现的决策；工程事实应由 AI 自己检查。
 6. 完成开发后使用 [ALIGN-GATE](prompts/ALIGN-GATE.md)，没有真实验证证据时不得通过。
 
+如果任务明确要求完整正规流程，直接从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始；普通任务仍由 AI 判断使用 TASK 或 SPEC，不默认生成全部模板。
+
 ## 2. 不同 AI 工具如何使用
 
 ### 支持项目指令的编码 Agent

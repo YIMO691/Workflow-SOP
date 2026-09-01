@@ -14,7 +14,8 @@
 - [PRD](PRD.md)：用户能力、范围和验收标准。
 - [SDD](SDD.md)：任务模型、权限、状态和失败恢复。
 - [TEST-PLAN](TEST-PLAN.md)：跨层、故障和安全验证。
+- [DELIVERY](DELIVERY.md)：实施、测试、偏移、Align 和最终交付决定的唯一汇总。
 - [ADR-0001](adr/0001-use-async-export-job.md)：采用异步任务的决定。
-- [ALIGNMENT-GATE](ALIGNMENT-GATE.md)：演示没有真实实现证据时 Gate 必须保持 Fail。
+- [ALIGNMENT-GATE](ALIGNMENT-GATE.md)：演示独立审计场景；没有真实实现证据时 Gate 必须保持 Fail。
 
-真实项目中，实施结果和交付检查应继续关联到同一个任务与 PR/MR。
+真实项目中，实施结果和交付检查应继续关联到同一个任务与 PR/MR。通常只使用 DELIVERY 完成 Align；只有审计要求才额外保留独立 ALIGNMENT-GATE。

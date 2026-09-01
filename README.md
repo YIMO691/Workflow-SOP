@@ -1,6 +1,6 @@
 # 轻量研发工作流
 
-版本：v0.3（AI 操作层试运行稿）
+版本：v0.4（正式功能模板包试运行稿）
 
 适用范围：新功能、功能迭代、缺陷修复、重构和技术改造
 
@@ -14,7 +14,7 @@
 
 - L1 小改动：任务说明即可。
 - L2 标准功能：一份 `SPEC.md`。
-- L3 复杂或高风险项目：拆分 PRD、SDD、TEST-PLAN；重大决策才写 ADR。
+- L3 复杂或高风险项目：使用完整正式流程，包含 PRD、SDD、TEST-PLAN、DELIVERY；重大决策才写 ADR。
 
 ## 2. 核心原则
 
@@ -68,10 +68,10 @@ TDD 指 Test-Driven Development，不是一份必须提交的文档。测试代�
 2. 复制对应模板：
    - L1：[TASK](templates/TASK.md)
    - L2：[SPEC](templates/SPEC.md)
-   - L3：[PRD](templates/PRD.md)、[SDD](templates/SDD.md)、[TEST-PLAN](templates/TEST-PLAN.md)
+   - L3：从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始，使用 [PRD](templates/PRD.md)、[SDD](templates/SDD.md)、[TEST-PLAN](templates/TEST-PLAN.md) 和 [DELIVERY](templates/DELIVERY.md)
 3. 满足 Ready 后开始实现；高风险任务先满足 Build。
-4. 在任务或 PR/MR 中完成 [交付检查](templates/DELIVERY-CHECKLIST.md)，通过 Align Gate。
-5. L3、高风险或审计任务需要独立留证时使用 [对齐记录](templates/ALIGNMENT-GATE.md)。
+4. L1/L2 在任务或 PR/MR 中完成 [交付检查](templates/DELIVERY-CHECKLIST.md)；L3 在 DELIVERY 中汇总实施、测试、偏移和最终对齐。
+5. 只有独立审计需要时才额外使用 [对齐记录](templates/ALIGNMENT-GATE.md)。
 6. 重大技术选择单独复制 [ADR](templates/ADR.md)。
 
 完整规则见 [研发 SOP](SOP.md)。
@@ -86,8 +86,9 @@ TDD 指 Test-Driven Development，不是一份必须提交的文档。测试代�
 | SDD | 系统如何实现、如何失败和恢复 | L3 或高风险设计 |
 | TEST-PLAN | 如何系统验证质量与发布条件 | L3 或复杂测试 |
 | ADR | 为什么选择这个关键方案 | 存在重大、长期或难逆决策时 |
-| DELIVERY-CHECKLIST | 是否真正完成并清理干净 | 所有任务，可放在 PR/MR |
-| ALIGNMENT-GATE | 权威来源与最终交付是否一致 | 仅 L3、高风险或审计任务按需独立留证 |
+| DELIVERY | 最终实现、测试结果、偏移、Align 和交付决定 | L3 正式流程 |
+| DELIVERY-CHECKLIST | 是否真正完成并清理干净 | L1/L2，可放在 PR/MR |
+| ALIGNMENT-GATE | 独立审计时记录权威来源与交付一致性 | 仅审计要求按需使用 |
 | START-HERE | 新人如何在几分钟内启动 AI | 新人首次使用 |
 | AGENTS / AI-PLAYBOOK | AI 自动入口与执行协议 | AI 参与分析、设计、实现或评审 |
 

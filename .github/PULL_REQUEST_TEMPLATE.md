@@ -9,6 +9,7 @@
 - [ ] SOP / Gate
 - [ ] 任务分级
 - [ ] PRD、SDD、测试或 ADR 模板
+- [ ] DELIVERY / 正式功能模板包
 - [ ] AI 操作层
 - [ ] 示例或说明
 - [ ] GitHub / CI

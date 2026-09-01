@@ -1,11 +1,11 @@
 # 最终文档对齐 Gate 提示词
 
 ```text
-请按照 SOP 的分层权威执行最终 Align Gate，并检查 DELIVERY-CHECKLIST。
+请按照 SOP 的分层权威执行最终 Align Gate：L1/L2 检查 DELIVERY-CHECKLIST，L3 检查并更新 DELIVERY。
 
 项目或代码位置：<路径、仓库或已上传材料>
 任务 ID：<ID>
-任务文档：<TASK/SPEC/PRD/SDD/TEST-PLAN/ADR 位置>
+任务文档：<TASK/SPEC/PRD/SDD/TEST-PLAN/ADR/DELIVERY 位置>
 变更范围：<PR/MR、diff、提交或文件列表>
 测试与证据：<流水线、测试命令、人工验证、运行证据位置>
 允许的操作：<只读检查 / 允许修正文档和代码>
@@ -21,6 +21,8 @@
 6. 代码清理、遗留和后续任务；
 7. Align 结论：Pass 或 Fail；
 8. Done 结论。
+
+L3 正式项目应把最终实现、测试结果、偏移、遗留、Align 和交付决定统一更新到 DELIVERY，不再额外生成内容重复的状态报告。
 
 以下任一情况必须 Fail：权威内容仍冲突、阻断级 AC 无证据、需求/设计变化未重新确认、无法访问必要实现或测试证据。
 ```

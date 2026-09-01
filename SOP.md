@@ -10,6 +10,16 @@
 
 分级决定最低文档，不决定开发周期和人员数量。
 
+三种使用方式：
+
+| 等级 | 最低产物 | 适用方式 |
+| --- | --- | --- |
+| L1 | TASK + 验证结果 | 小改动和明确缺陷 |
+| L2 | 一份 SPEC + 验证结果 | 大多数普通功能 |
+| L3 | PRD + SDD + TEST-PLAN + DELIVERY，ADR 按需 | 完整正规流程 |
+
+L3 从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始。模板提供完整覆盖，章节按 `[必填]`、`[条件必填]`、`[可选]` 使用；模板完整不等于所有内容都必须填写。
+
 ## 3. Ready：可以开始做
 
 所有任务开始实现前，至少确认：
@@ -23,6 +33,8 @@
 
 Ready 不要求所有细节提前冻结。实现中可以补充细节，但影响目标、范围或验收的变化必须回到任务文档确认。
 
+正式 L3 项目以 PRD 作为 Ready 的主要产物；PRD 未明确目标、非目标、关键规则和可验证 AC 时，Ready 为 Fail。
+
 ## 4. Build：必要设计已经确认
 
 仅当任务包含下列情况时设置开发前设计确认：
@@ -33,6 +45,8 @@ Ready 不要求所有细节提前冻结。实现中可以补充细节，但影�
 - 难以回滚、长期维护成本高或有明显技术选型分歧。
 
 确认内容只需覆盖相关部分：总体方案、关键数据与接口、失败处理、兼容回滚、主要替代方案。普通 L1/L2 任务不设置独立 Build 审批。
+
+正式 L3 项目以 SDD 和 TEST-PLAN 作为 Build 的主要产物：SDD 说明如何实现及如何失败和恢复，TEST-PLAN 说明如何证明正确。TDD 是开发方法；Red/Green/Refactor 证据由测试代码和结果承担，不要求重复建立 TDD 报告。
 
 ## 5. 开发验证 Loop
 
@@ -61,6 +75,7 @@ Ready 不要求所有细节提前冻结。实现中可以补充细节，但影�
 - 评审关注目标是否正确、设计风险是否受控、测试是否证明行为，而非模板是否填满。
 - L3 任务建议在大规模实现前完成需求和关键设计确认。
 - 实现结束后，必要文档必须反映最终行为；历史讨论留在任务或 ADR，不塞回正文。
+- L3 的实施结果、测试执行、偏移、遗留和最终结论统一进入 DELIVERY；不要再创建内容重复的实施报告、测试报告和状态报告。
 
 ## 8. Align：文档与交付对齐
 
@@ -98,7 +113,7 @@ Align 是所有任务进入 Done 前的必经 Gate，但不是新的审批系统
 | 公共契约、数据或关键方案改变 | 回到 Build，更新 SDD/ADR |
 | AC 缺少验证 | 补测试或验证；不能用待办绕过阻断项 |
 
-权威内容仍有冲突时 Align 为 `Fail`，不得进入 Done。L1/L2 默认把结果记录在交付检查中；L3、高风险或审计任务才按需使用独立的 [ALIGNMENT-GATE](templates/ALIGNMENT-GATE.md)。
+权威内容仍有冲突时 Align 为 `Fail`，不得进入 Done。L1/L2 默认把结果记录在交付检查中；L3 默认记录在 [DELIVERY](templates/DELIVERY.md)；只有独立审计要求才额外使用 [ALIGNMENT-GATE](templates/ALIGNMENT-GATE.md)。
 
 ## 9. Done：真正完成
 
@@ -113,7 +128,7 @@ Align 是所有任务进入 Done 前的必经 Gate，但不是新的审批系统
 - [ ] 未完成项、已知风险和后续任务已明确记录。
 - [ ] PR/MR 可说明改了什么、为什么安全、如何验证。
 
-直接使用 [DELIVERY-CHECKLIST](templates/DELIVERY-CHECKLIST.md) 完成检查。
+L1/L2 直接使用 [DELIVERY-CHECKLIST](templates/DELIVERY-CHECKLIST.md) 完成检查；L3 使用 [DELIVERY](templates/DELIVERY.md) 汇总实际结果并完成 Align。
 
 ## 10. 流程例外
 

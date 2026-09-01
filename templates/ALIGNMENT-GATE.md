@@ -9,7 +9,7 @@ related: [FEAT-0000]
 
 # 1. 使用条件
 
-<!-- 仅 L3、高风险或审计任务需要独立留证。L1/L2 直接使用 DELIVERY-CHECKLIST。 -->
+<!-- 仅存在独立审计要求时使用。L1/L2 直接使用 DELIVERY-CHECKLIST，L3 默认使用 DELIVERY，不重复创建本文件。 -->
 
 # 2. 权威来源
 

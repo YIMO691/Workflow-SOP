@@ -1,5 +1,7 @@
 # 文档对齐 Gate 试运行报告
 
+> 历史说明：本文记录 v0.2 阶段的试运行过程。v0.4 起，L3 默认使用 `DELIVERY.md` 汇总实施、测试和 Align；仅独立审计要求才额外建立 `ALIGNMENT-GATE.md`。当前规则以根目录 README 和 SOP 为准。
+
 ## 1. 试运行方式
 
 将“增加文档对齐 Gate”作为 L3 工作流功能，依次完成任务定义、PRD、SDD、TEST-PLAN、ADR、实际模板修改、三级场景演练和最终 Align。
