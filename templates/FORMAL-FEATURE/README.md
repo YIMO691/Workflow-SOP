@@ -22,11 +22,13 @@ updated: YYYY-MM-DD
 
 | 文档 | 权威内容 | 状态 |
 | --- | --- | --- |
-| [PRD](../PRD.md) | 目标、范围、业务规则、验收标准 | Draft/Approved |
-| [SDD](../SDD.md) | 关键设计、失败、兼容、迁移和回滚 | Draft/Approved |
-| [TEST-PLAN](../TEST-PLAN.md) | 测试策略、场景、映射和退出条件 | Draft/Approved |
-| [DELIVERY](../DELIVERY.md) | 最终实现、测试结果、偏移、Align 和交付决定 | Draft/Final |
+| [PRD](../PRD.md) | 目标、范围、业务规则、验收标准 | draft/review/approved/superseded |
+| [SDD](../SDD.md) | 关键设计、失败、兼容、迁移和回滚 | draft/review/approved/superseded |
+| [TEST-PLAN](../TEST-PLAN.md) | 测试策略、场景、映射和退出条件 | draft/review/approved/superseded |
+| [DELIVERY](../DELIVERY.md) | 最终实现、测试结果、偏移、Align 和交付决定 | draft/review/approved/superseded |
 | [ADR](../ADR.md) | 重大、长期或难逆的技术决定 | 按需 |
+
+`status` 只描述文档生命周期，不描述实现或发布进度：`draft` 为编写中，`review` 为待评审，`approved` 为当前有效基线，`superseded` 为已被新文档替代。实现、验证和发布状态只在 DELIVERY 正文中记录，避免同一个状态字段承担多种含义。
 
 ## 3. 推荐落地目录
 

@@ -1,0 +1,19 @@
+{
+  "name": "align-fail-cannot-release",
+  "expected_violations": ["ALIGN_REQUIRED"],
+  "delivery": {
+    "implementation_status": "已完成",
+    "verification_status": "Pass",
+    "release_readiness": "可发布",
+    "align": "Fail",
+    "decision": "可发布",
+    "blocking_ac_results": ["Pass"],
+    "baseline": {
+      "task_change": "PR-43",
+      "source_revision": "def456",
+      "build_artifact": "build-43",
+      "config_schema_migration": "N/A: no schema change",
+      "test_environment": "staging-20260901"
+    }
+  }
+}

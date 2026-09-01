@@ -1,0 +1,19 @@
+{
+  "name": "release-requires-complete-implementation",
+  "expected_violations": ["IMPLEMENTATION_NOT_COMPLETE"],
+  "delivery": {
+    "implementation_status": "实现中",
+    "verification_status": "Pass",
+    "release_readiness": "可发布",
+    "align": "Pass",
+    "decision": "可发布",
+    "blocking_ac_results": ["Pass"],
+    "baseline": {
+      "task_change": "PR-45",
+      "source_revision": "jkl012",
+      "build_artifact": "build-45",
+      "config_schema_migration": "N/A: no schema change",
+      "test_environment": "staging-20260901"
+    }
+  }
+}

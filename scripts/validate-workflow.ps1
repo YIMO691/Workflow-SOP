@@ -53,6 +53,8 @@ $requiredFiles = @(
     'templates/ALIGNMENT-GATE.md',
     'templates/FORMAL-FEATURE/README.md',
     'examples/L3-complex-feature/DELIVERY.md',
+    'scripts/test-delivery-gates.ps1',
+    'tests/workflow-gate/README.md',
     'prompts/NEW-TASK.md',
     'prompts/CONTINUE-TASK.md',
     'prompts/ALIGN-GATE.md',
@@ -100,15 +102,43 @@ $testPlan = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/TEST-P
 if ($testPlan -notmatch '实际执行结果统一写入 `DELIVERY\.md`') {
     $issues.Add('TEST-PLAN must route actual execution results to DELIVERY.md.')
 }
+if ($testPlan -notmatch '阻断发布' -or
+    $testPlan -notmatch '# 8\. 测试准入、暂停/恢复与退出条件 \[必填\]') {
+    $issues.Add('TEST-PLAN must identify blocking coverage and test entry/exit conditions.')
+}
+
+$prd = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/PRD.md')
+if ($prd -notmatch '# 6\. 质量与约束要求 \[条件必填\]' -or
+    $prd -notmatch 'Confirmed/Assumed/Open/Blocked') {
+    $issues.Add('PRD must cover measurable quality requirements and classify assumptions/open items.')
+}
+
+$sdd = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/SDD.md')
+if ($sdd -notmatch '设计驱动、约束与责任边界' -or
+    $sdd -notmatch '权威 Owner 与读写边界') {
+    $issues.Add('SDD must support design drivers and authoritative ownership boundaries.')
+}
 
 $delivery = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/DELIVERY.md')
-if ($delivery -notmatch '# 8\. Align Gate \[必填\]' -or
-    $delivery -notmatch '# 9\. 最终交付决定 \[必填\]') {
+if ($delivery -notmatch '# 2\. 交付基线 \[必填\]' -or
+    $delivery -notmatch '# 9\. Align Gate \[必填\]' -or
+    $delivery -notmatch '# 10\. 最终交付决定 \[必填\]') {
     $issues.Add('DELIVERY must contain the required Align Gate and final delivery decision.')
+}
+if ($delivery -notmatch '实现状态：`未开始 / 实现中 / 已完成 / 阻断`' -or
+    $delivery -notmatch '验证状态：`未执行 / 部分完成 / Pass / Fail / Blocked`' -or
+    $delivery -notmatch '发布就绪：`未评估 / 可进入 QA / 可发布 / 阻断`') {
+    $issues.Add('DELIVERY must keep implementation, verification, and release readiness separate.')
+}
+
+$formalEntry = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/FORMAL-FEATURE/README.md')
+if ($formalEntry -notmatch 'draft/review/approved/superseded' -or
+    $formalEntry -notmatch '`status` 只描述文档生命周期') {
+    $issues.Add('Formal feature package must define the document lifecycle status vocabulary.')
 }
 
 $taskLevels = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'TASK-LEVELS.md')
-if ($taskLevels -notmatch '`DELIVERY\.md`：最终实现、测试结果、偏移、Align 和交付决定的唯一汇总') {
+if ($taskLevels -notmatch '`DELIVERY\.md`：[^\r\n]*最终实现[^\r\n]*Align[^\r\n]*唯一汇总') {
     $issues.Add('L3 minimum artifacts must include DELIVERY.md.')
 }
 
@@ -117,5 +147,12 @@ if ($issues.Count -gt 0) {
     exit 1
 }
 
+$gateOutput = & (Join-Path $repoRoot 'scripts/test-delivery-gates.ps1')
+$gateSucceeded = $?
+$gateOutput | Write-Output
+if (-not $gateSucceeded) {
+    exit 1
+}
+
 Write-Output "Validated $($markdownFiles.Count) Markdown files."
-Write-Output 'Required workflow files, relative links, instruction size, and Align invariants passed.'
+Write-Output 'Required files, links, template contracts, Align invariants, and workflow gate regressions passed.'

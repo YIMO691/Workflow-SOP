@@ -22,17 +22,17 @@ related_sdd: FEAT-3100-SDD
 
 # 3. 需求与测试映射
 
-| 验收项/风险 | 测试名称或场景 | 层级 | 自动化 | 通过标准 |
-| --- | --- | --- | --- | --- |
-| AC-01 | Create_ReturnsBeforeGeneration | 集成 | 是 | 2 秒内返回任务 ID |
-| AC-02 | Query_RejectsOtherOwner | 集成 | 是 | 返回无权访问且无任务信息泄露 |
-| AC-03 | Download_RechecksPermission | E2E | 是 | 撤权后拒绝生成地址 |
-| AC-04 | WorkerLease_RecoversAfterCrash | 故障注入 | 是 | 任务恢复且仅有一个最终文件 |
-| AC-05 | Cleanup_ExpiresAndDeletesObject | 集成 | 是 | 文件删除、任务为 Expired |
+| 验收项/风险 | 优先级 | 阻断发布 | 测试名称或场景 | 层级 | 自动化 | 通过标准 |
+| --- | --- | --- | --- | --- | --- | --- |
+| AC-01 | P1 | 是 | Create_ReturnsBeforeGeneration | 集成 | 是 | 2 秒内返回任务 ID |
+| AC-02 | P0 | 是 | Query_RejectsOtherOwner | 集成 | 是 | 返回无权访问且无任务信息泄露 |
+| AC-03 | P0 | 是 | Download_RechecksPermission | E2E | 是 | 撤权后拒绝生成地址 |
+| AC-04 | P0 | 是 | WorkerLease_RecoversAfterCrash | 故障注入 | 是 | 任务恢复且仅有一个最终文件 |
+| AC-05 | P1 | 是 | Cleanup_ExpiresAndDeletesObject | 集成 | 是 | 文件删除、任务为 Expired |
 
-# 4. 环境与数据
+# 4. 环境、数据与计划基线
 
-使用隔离测试租户、测试队列和对象存储桶。准备有权限、撤权、跨租户、空数据和超过最大行数的数据集；测试结束后按任务 ID 清理。
+执行时记录待测 Commit、构建号、配置版本和测试时间。使用隔离测试租户、测试队列和对象存储桶。准备有权限、撤权、跨租户、空数据和超过最大行数的数据集；测试结束后按任务 ID 清理。
 
 # 5. 核心、异常与边界场景
 
@@ -54,7 +54,19 @@ related_sdd: FEAT-3100-SDD
 
 状态机、幂等去重、权限规则和已发现缺陷必须测试先行；浏览器布局与下载交互可通过组件测试和端到端测试验证。
 
-# 8. 测试退出条件
+# 8. 测试准入、暂停/恢复与退出条件
+
+## 准入条件
+
+- [ ] 待测 Commit、构建、任务表 Schema 和对象存储配置已记录。
+- [ ] 隔离租户、队列、存储桶和测试账号可用。
+- [ ] P0/P1 阻断范围已经确认。
+
+## 暂停与恢复
+
+发生跨租户数据泄露、测试环境混入生产数据、构建或配置版本变化时立即暂停；清理影响并重新冻结基线后从受影响批次重测。
+
+## 退出条件
 
 - [ ] 所有 Must 验收项通过。
 - [ ] 权限、跨租户和敏感字段检查通过。

@@ -1,0 +1,13 @@
+{
+  "name": "valid-blocked",
+  "expected_violations": [],
+  "delivery": {
+    "implementation_status": "阻断",
+    "verification_status": "Blocked",
+    "release_readiness": "阻断",
+    "align": "Fail",
+    "decision": "阻断",
+    "blocking_ac_results": ["Blocked"],
+    "baseline": {}
+  }
+}

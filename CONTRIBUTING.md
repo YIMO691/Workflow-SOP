@@ -17,13 +17,15 @@
 
 ## 开发流程
 
-1. 从 `main` 创建短生命周期分支，建议使用 `docs/`、`fix/` 或 `workflow/` 前缀。
+1. 从 `main` 创建短生命周期分支，建议使用 `docs/`、`fix/`、`feat/` 或 `workflow/` 前缀。
 2. 更新 SOP 或模板时，同时检查 README、示例、AI 操作层和 GitHub 模板是否受影响。
 3. 本地运行：
 
    ```powershell
    pwsh ./scripts/validate-workflow.ps1
    ```
+
+   修改 Gate、状态或一致性规则时，必须在 `tests/workflow-gate/` 同时增加能够通过和应被拒绝的回归夹具。
 
 4. 使用 PR 模板说明问题、证据、影响和 Align 结论。
 5. 至少由 CODEOWNERS 中的维护者评审后合并。

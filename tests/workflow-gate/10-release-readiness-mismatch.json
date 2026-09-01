@@ -1,0 +1,19 @@
+{
+  "name": "release-readiness-mismatch",
+  "expected_violations": ["RELEASE_READINESS_MISMATCH"],
+  "delivery": {
+    "implementation_status": "已完成",
+    "verification_status": "Pass",
+    "release_readiness": "可进入 QA",
+    "align": "Pass",
+    "decision": "可发布",
+    "blocking_ac_results": ["Pass"],
+    "baseline": {
+      "task_change": "PR-47",
+      "source_revision": "pqr678",
+      "build_artifact": "build-47",
+      "config_schema_migration": "N/A: no schema change",
+      "test_environment": "staging-20260901"
+    }
+  }
+}
