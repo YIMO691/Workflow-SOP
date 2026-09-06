@@ -4,6 +4,7 @@
 
 ## [Unreleased]
 
+- 增加 2026 AI Harness 与轻量研发工作流研究报告，明确 v0.6 的精简优化方向及不引入的重型机制。
 - 将 Requirement Intake 的事实、假设、Open/Blocked 分类和影响扫描合并进 Ready 与 AI 操作层，不新增默认报告。
 - PRD 增加成功指标、可度量质量要求和假设/待确认状态；SDD 增加设计驱动与权威 Owner 边界。
 - TEST-PLAN 增加阻断等级、计划基线、测试准入和暂停/恢复条件。

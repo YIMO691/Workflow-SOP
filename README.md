@@ -101,6 +101,8 @@ TDD 指 Test-Driven Development，不是一份必须提交的文档。测试代�
 - [Align Gate 试运行](pilots/DOC-ALIGNMENT-GATE/00-TASK.md)
 - [AI 操作层试运行](pilots/AI-OPERATION-LAYER/SPEC.md)
 
+研究与演进依据见 [2026 AI Harness 与轻量研发工作流研究报告](research/2026-AI-HARNESS-WORKFLOW-REPORT.md)。
+
 ## 8. 分层权威
 
 - TASK/SPEC/PRD：需求目标、范围、业务规则和验收标准。
