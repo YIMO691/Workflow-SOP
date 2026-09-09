@@ -6,7 +6,7 @@ status: draft
 owner: 待填写
 updated: YYYY-MM-DD
 related_prd: FEAT-0000
-related_sdd: FEAT-0000-SDD
+related_sdds: [] # CLIENT-SDD/SERVER-SDD/SDD
 related_test_plan: FEAT-0000-TEST
 ---
 
@@ -39,6 +39,10 @@ related_test_plan: FEAT-0000-TEST
 
 <!-- 说明最终交付了什么能力、关键行为和实际改动边界，不写逐文件流水账。 -->
 
+- Client：
+- Server：
+- Client/Server 契约：
+
 # 4. 验收标准与证据 [必填]
 
 | AC | 最终行为/实现位置 | 测试或人工验证 | 结果 | 证据位置 |
@@ -46,6 +50,9 @@ related_test_plan: FEAT-0000-TEST
 | AC-01 |  |  | Pass/Fail/Blocked |  |
 
 # 5. 测试执行结果 [必填]
+
+- 验证档位：`FAST / STANDARD / CRITICAL`
+- Review 结论与检查人：
 
 | 批次/日期 | 范围 | 结果 | 证据 | 限制或未执行项 |
 | --- | --- | --- | --- | --- |

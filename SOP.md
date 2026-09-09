@@ -18,7 +18,7 @@
 | L2 | 一份 SPEC + 验证结果 | 大多数普通功能 |
 | L3 | PRD + SDD + TEST-PLAN + DELIVERY，ADR 按需 | 完整正规流程 |
 
-L3 从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始。模板提供完整覆盖，章节按 `[必填]`、`[条件必填]`、`[可选]` 使用；模板完整不等于所有内容都必须填写。
+L3 从 [正式功能模板包](templates/FORMAL-FEATURE/README.md) 开始。模板提供完整覆盖，章节按 `[必填]`、`[条件必填]`、`[可选]` 使用；模板完整不等于所有内容都必须填写。文档统一使用 Markdown，分端规则见 [文档规范](DOCUMENTATION-GUIDE.md)。
 
 ## 3. Ready：可以开始做
 
@@ -57,7 +57,7 @@ Ready 不要求所有细节提前冻结。实现中可以补充细节，但影�
 
 确认内容只需覆盖相关部分：总体方案、关键数据与接口、失败处理、兼容回滚、主要替代方案。普通 L1/L2 任务不设置独立 Build 审批。
 
-正式 L3 项目以 SDD 和 TEST-PLAN 作为 Build 的主要产物：SDD 说明如何实现及如何失败和恢复，TEST-PLAN 说明如何证明正确。TDD 是开发方法；Red/Green/Refactor 证据由测试代码和结果承担，不要求重复建立 TDD 报告。
+正式 L3 项目以按需实例化的 Client/Server SDD 和 TEST-PLAN 作为 Build 的主要产物：SDD 说明各端如何实现及如何失败和恢复，TEST-PLAN 说明如何证明正确。PRD 始终保持一份；跨端契约链接同一个可执行定义。TDD 是开发方法；Red/Green/Refactor 证据由测试代码和结果承担，不要求重复建立 TDD 报告。
 
 ## 5. 开发验证 Loop
 
@@ -71,6 +71,10 @@ Ready 不要求所有细节提前冻结。实现中可以补充细节，但影�
 6. 继续下一个行为。
 
 核心业务规则、缺陷修复、数据转换和稳定接口优先测试先行。纯视觉调整、探索性原型或难以稳定自动化的场景可不执行严格测试先行，但必须说明验证方式。
+
+验证和 Review 按 [任务分级规则](TASK-LEVELS.md) 选择 FAST、STANDARD 或 CRITICAL。白盒测试用于复杂内部规则、不变量、并发和状态机；冒烟测试用于启动、关键用户路径及 Client/Server 联通；不得为了“极致”而无差别执行所有测试。
+
+代码和注释遵循 [代码规范](CODE-GUIDE.md)。复杂度只在非平凡算法、热点或容易退化的方法上记录；I/O 方法优先记录外部调用、数据上限、并发和阻塞特征。
 
 ## 6. 变更处理
 
@@ -87,6 +91,7 @@ Ready 不要求所有细节提前冻结。实现中可以补充细节，但影�
 - L3 任务建议在大规模实现前完成需求和关键设计确认。
 - 实现结束后，必要文档必须反映最终行为；历史讨论留在任务或 ADR，不塞回正文。
 - L3 的实施结果、测试执行、偏移、遗留和最终结论统一进入 DELIVERY；不要再创建内容重复的实施报告、测试报告和状态报告。
+- STANDARD/CRITICAL 的独立 Review 应与实现者隔离；AI Reviewer 默认只读，不得一边修改实现一边给出独立通过结论。
 
 ### 7.1 Gate 的证据要求
 
@@ -148,6 +153,8 @@ Align 是所有任务进入 Done 前的必经 Gate，但不是新的审批系统
 - [ ] PR/MR 可说明改了什么、为什么安全、如何验证。
 
 L1/L2 直接使用 [DELIVERY-CHECKLIST](templates/DELIVERY-CHECKLIST.md) 完成检查；L3 使用 [DELIVERY](templates/DELIVERY.md) 汇总实际结果并完成 Align。
+
+使用 AI 或自动化执行长任务时，可按 [AgentWorkspace 规范](AGENT-WORKSPACE.md) 隔离检查点、证据和临时产物；项目内权威文档仍随源码版本管理。
 
 ## 10. 流程例外
 

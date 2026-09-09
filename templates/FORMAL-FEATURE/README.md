@@ -23,7 +23,7 @@ updated: YYYY-MM-DD
 | 文档 | 权威内容 | 状态 |
 | --- | --- | --- |
 | [PRD](../PRD.md) | 目标、范围、业务规则、验收标准 | draft/review/approved/superseded |
-| [SDD](../SDD.md) | 关键设计、失败、兼容、迁移和回滚 | draft/review/approved/superseded |
+| [SDD 模板](../SDD.md) | 按 Client/Server 影响实例化；关键设计、失败、兼容、迁移和回滚 | draft/review/approved/superseded |
 | [TEST-PLAN](../TEST-PLAN.md) | 测试策略、场景、映射和退出条件 | draft/review/approved/superseded |
 | [DELIVERY](../DELIVERY.md) | 最终实现、测试结果、偏移、Align 和交付决定 | draft/review/approved/superseded |
 | [ADR](../ADR.md) | 重大、长期或难逆的技术决定 | 按需 |
@@ -36,14 +36,16 @@ updated: YYYY-MM-DD
 docs/features/FEAT-XXXX/
 ├── README.md
 ├── PRD.md
-├── SDD.md
+├── CLIENT-SDD.md       # 按需
+├── SERVER-SDD.md       # 按需
+├── SDD.md              # 单端很少或共享设计时可替代以上两项
 ├── TEST-PLAN.md
 ├── DELIVERY.md
 └── ADR/
     └── ADR-0001.md
 ```
 
-使用时复制本入口和上表模板到功能目录。若项目已有任务系统，可以删除重复的负责人、评审人和状态字段，但不得删除目标、边界、验收、关键设计、验证和最终对齐内容。
+使用时复制本入口和上表模板到功能目录。PRD 与 DELIVERY 始终保持一份；从同一个 SDD 模板按需创建 Client/Server 文件，不要求同时保留三个 SDD。若项目已有任务系统，可以删除重复的负责人、评审人和状态字段，但不得删除目标、边界、验收、关键设计、验证和最终对齐内容。
 
 ## 4. 正式流程
 
