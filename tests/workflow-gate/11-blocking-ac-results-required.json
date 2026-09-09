@@ -1,0 +1,19 @@
+{
+  "name": "blocking-ac-results-required",
+  "expected_violations": ["BLOCKING_AC_RESULTS_REQUIRED"],
+  "delivery": {
+    "implementation_status": "已完成",
+    "verification_status": "部分完成",
+    "release_readiness": "可进入 QA",
+    "align": "Pass",
+    "decision": "可进入 QA",
+    "blocking_ac_results": [],
+    "baseline": {
+      "task_change": "PR-48",
+      "source_revision": "stu901",
+      "build_artifact": "build-48",
+      "config_schema_migration": "N/A: no schema change",
+      "test_environment": "staging-20260901"
+    }
+  }
+}

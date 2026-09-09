@@ -2,6 +2,17 @@
 
 本文件记录工作流包的重要变化。
 
+## [Unreleased]
+
+- 增加 2026 AI Harness 与轻量研发工作流研究报告，明确 v0.6 的精简优化方向及不引入的重型机制。
+- 将 Requirement Intake 的事实、假设、Open/Blocked 分类和影响扫描合并进 Ready 与 AI 操作层，不新增默认报告。
+- PRD 增加成功指标、可度量质量要求和假设/待确认状态；SDD 增加设计驱动与权威 Owner 边界。
+- TEST-PLAN 增加阻断等级、计划基线、测试准入和暂停/恢复条件。
+- DELIVERY 分离实现、验证和发布状态，并增加源码、构建、配置/Schema 和测试环境交付基线。
+- 明确 L3 Hard Gate 需要可复现自动化证据或独立评审，执行者自检不能作为唯一通过依据。
+- 增加工作流 Gate 正反例回归夹具，阻止状态矛盾和缺失证据导致的 false-green。
+- 升级 GitHub Actions checkout 运行时，消除 Node.js 20 弃用告警。
+
 ## [0.4.0] - 2026-09-01
 
 - 增加正式功能模板包，形成 PRD、SDD、TEST-PLAN、DELIVERY 和按需 ADR 的完整正规流程。

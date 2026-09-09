@@ -1,0 +1,13 @@
+{
+  "name": "blocked-ac-cannot-align",
+  "expected_violations": ["BLOCKING_AC_NOT_PASS"],
+  "delivery": {
+    "implementation_status": "阻断",
+    "verification_status": "Blocked",
+    "release_readiness": "阻断",
+    "align": "Pass",
+    "decision": "阻断",
+    "blocking_ac_results": ["Pass", "Blocked"],
+    "baseline": {}
+  }
+}

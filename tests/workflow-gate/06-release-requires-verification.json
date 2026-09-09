@@ -1,0 +1,19 @@
+{
+  "name": "release-requires-verification",
+  "expected_violations": ["VERIFICATION_NOT_PASS"],
+  "delivery": {
+    "implementation_status": "已完成",
+    "verification_status": "部分完成",
+    "release_readiness": "可发布",
+    "align": "Pass",
+    "decision": "可发布",
+    "blocking_ac_results": ["Pass"],
+    "baseline": {
+      "task_change": "PR-44",
+      "source_revision": "ghi789",
+      "build_artifact": "build-44",
+      "config_schema_migration": "N/A: no schema change",
+      "test_environment": "staging-20260901"
+    }
+  }
+}

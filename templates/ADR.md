@@ -5,9 +5,12 @@ status: proposed
 date: YYYY-MM-DD
 deciders: []
 related: []
+supersedes: []
+superseded_by: null
 ---
 
 > 本模板仅用于重大、长期或难以逆转的决定。普通实现选择直接记录在 SPEC/SDD，不额外创建 ADR。
+> `status` 使用 `proposed / accepted / rejected / deprecated / superseded`；被新决定替代时保留旧 ADR，并通过 `superseded_by` 指向新记录。
 
 # 背景与问题 [必填]
 
