@@ -12,11 +12,11 @@ body:
   - type: dropdown
     id: task_level
     attributes:
-      label: 任务等级
+      label: 文档等级
       options:
         - L1 小改动
         - L2 标准功能
-        - L3 复杂或高风险项目
+        - L3 需分开维护的复杂项目
         - 无法判断
     validations:
       required: true
@@ -34,6 +34,8 @@ body:
         - Done 与代码清理
         - PRD / SDD / TEST-PLAN / ADR
         - AI 操作层
+        - 验证档位与 Review
+        - 代码或 AgentWorkspace 规范
         - GitHub 协作模板
     validations:
       required: true
@@ -41,7 +43,7 @@ body:
     id: context
     attributes:
       label: 使用场景
-      description: 说明任务类型、使用到的流程或模板，以及相关背景。
+      description: 说明任务类型、使用到的流程或模板，以及相关背景；已选择验证档位时一并注明 FAST/STANDARD/CRITICAL，无需为了反馈重新分级。
     validations:
       required: true
   - type: textarea
