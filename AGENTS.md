@@ -2,6 +2,8 @@
 
 Before working on a task, read `AI-PLAYBOOK.md`. Use `README.md`, `TASK-LEVELS.md`, and only the SOP sections and templates relevant to the current gate and task level.
 
+When the task changes code or uses an external AI workspace, also apply `CODE-GUIDE.md`, `DOCUMENTATION-GUIDE.md`, and `AGENT-WORKSPACE.md` only where relevant.
+
 ## Working agreement
 
 - Inspect the target repository, its closest instructions, existing docs, code, configuration, interfaces, and tests before asking discoverable questions or proposing detailed design.
@@ -14,6 +16,9 @@ Before working on a task, read `AI-PLAYBOOK.md`. Use `README.md`, `TASK-LEVELS.m
 - Do not claim test success, Align Pass, or Done without inspecting real evidence. Missing executable evidence means Align Fail or an explicit limitation.
 - Before completion, run the Align Gate and delivery cleanup. Record L3 implementation, test results, drift, and the final decision in DELIVERY; classify any drift and resolve it or return to Ready/Build.
 - Bind L3 delivery claims to the actual change, source revision, build/configuration baseline, test environment, and evidence. Self-review alone cannot prove a high-risk hard gate.
+- Keep one PRD and one DELIVERY; split technical design and validation by affected Client/Server side, with both sides referencing the same executable contract.
+- Choose documentation level and FAST, STANDARD, or CRITICAL verification separately. High risk requires appropriate verification and review, not automatically more documents. Follow `TASK-LEVELS.md`; do not interpret CRITICAL as permission to run every possible test.
+- Comment reasons, invariants, lifecycle and failure constraints. Add complexity notes only for non-trivial algorithms or performance-sensitive paths, and do not invent unsupported complexity claims.
 - Preserve project-specific safety, storage, review, and testing rules. More specific instructions closer to the target code take precedence.
 - If the workflow itself creates repeated work or misses a real risk, include evidence-backed process feedback; do not add mandatory policy without approval.
 

@@ -48,6 +48,9 @@ $requiredFiles = @(
     'START-HERE.md',
     'AGENTS.md',
     'AI-PLAYBOOK.md',
+    'DOCUMENTATION-GUIDE.md',
+    'CODE-GUIDE.md',
+    'AGENT-WORKSPACE.md',
     'templates/DELIVERY-CHECKLIST.md',
     'templates/DELIVERY.md',
     'templates/ALIGNMENT-GATE.md',
@@ -109,7 +112,8 @@ if ($testPlan -notmatch '阻断发布' -or
 
 $prd = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'templates/PRD.md')
 if ($prd -notmatch '# 6\. 质量与约束要求 \[条件必填\]' -or
-    $prd -notmatch 'Confirmed/Assumed/Open/Blocked') {
+    $prd -notmatch 'Confirmed/Assumed/Open/Blocked' -or
+    $prd -notmatch '受影响端与跨端行为') {
     $issues.Add('PRD must cover measurable quality requirements and classify assumptions/open items.')
 }
 
@@ -140,6 +144,25 @@ if ($formalEntry -notmatch 'draft/review/approved/superseded' -or
 $taskLevels = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'TASK-LEVELS.md')
 if ($taskLevels -notmatch '`DELIVERY\.md`：[^\r\n]*最终实现[^\r\n]*Align[^\r\n]*唯一汇总') {
     $issues.Add('L3 minimum artifacts must include DELIVERY.md.')
+}
+
+if ($taskLevels -notmatch 'FAST' -or $taskLevels -notmatch 'STANDARD' -or $taskLevels -notmatch 'CRITICAL') {
+    $issues.Add('Task levels must define risk-based FAST, STANDARD, and CRITICAL verification profiles.')
+}
+
+$documentationGuide = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'DOCUMENTATION-GUIDE.md')
+if ($documentationGuide -notmatch 'PRD 保持一份' -or $documentationGuide -notmatch 'CLIENT-SDD\.md' -or $documentationGuide -notmatch 'SERVER-SDD\.md') {
+    $issues.Add('Documentation guide must keep one PRD and define Client/Server SDD usage.')
+}
+
+$codeGuide = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'CODE-GUIDE.md')
+if ($codeGuide -notmatch '不强制每个方法都写 Big-O' -or $codeGuide -notmatch '外部调用次数') {
+    $issues.Add('Code guide must avoid blanket complexity comments and cover I/O cost signals.')
+}
+
+$agentWorkspace = Get-Content -Raw -LiteralPath (Join-Path $repoRoot 'AGENT-WORKSPACE.md')
+if ($agentWorkspace -notmatch '00_CONTROL' -or $agentWorkspace -notmatch '30_EVIDENCE' -or $agentWorkspace -notmatch '_scratch') {
+    $issues.Add('AgentWorkspace guide must separate control, evidence, and disposable scratch data.')
 }
 
 if ($issues.Count -gt 0) {

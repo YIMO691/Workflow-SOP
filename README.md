@@ -1,6 +1,6 @@
 # 轻量研发工作流
 
-版本：v0.5-draft（证据驱动 Gate 优化分支）
+版本：v0.6-draft（试运行：分端设计、代码质量与轻量 AgentWorkspace）
 
 适用范围：新功能、功能迭代、缺陷修复、重构和技术改造
 
@@ -14,7 +14,7 @@
 
 - L1 小改动：任务说明即可。
 - L2 标准功能：一份 `SPEC.md`。
-- L3 复杂或高风险项目：使用完整正式流程，包含 PRD、SDD、TEST-PLAN、DELIVERY；重大决策才写 ADR。
+- L3 需求、设计与验证需分开维护的复杂项目：使用完整正式流程，包含 PRD、SDD、TEST-PLAN、DELIVERY；重大决策才写 ADR。
 
 ## 2. 核心原则
 
@@ -26,6 +26,8 @@
 6. 文档可以短，但目标、边界、关键决定和验收标准不能含糊。
 7. 权威按信息类型划分；发生偏移必须解决，不能让过期文档或偶然实现自动成为全部真相。
 8. 编码前区分事实、假设、待确认和阻断项；Hard Gate 依赖可复现证据或独立评审。
+9. 产品意图保持一份，技术设计与验证按 Client/Server 影响拆分。
+10. 文档规模和验证强度分别判断；局部高风险修复可以使用单份 SPEC 配合 CRITICAL 验证，具体见 [任务分级](TASK-LEVELS.md)。
 
 ## 3. 工作流总览
 
@@ -75,6 +77,12 @@ TDD 指 Test-Driven Development，不是一份必须提交的文档。测试代�
 5. 只有独立审计需要时才额外使用 [对齐记录](templates/ALIGNMENT-GATE.md)。
 6. 重大技术选择单独复制 [ADR](templates/ADR.md)。
 
+书写与工程细则：
+
+- [Markdown 文档与 Client/Server 分端规范](DOCUMENTATION-GUIDE.md)
+- [代码、注释与复杂度规范](CODE-GUIDE.md)
+- [AgentWorkspace 工作区规范](AGENT-WORKSPACE.md)
+
 完整规则见 [研发 SOP](SOP.md)。
 
 ## 6. 文档职责
@@ -84,7 +92,7 @@ TDD 指 Test-Driven Development，不是一份必须提交的文档。测试代�
 | TASK | 改什么、为什么、如何验收 | L1 |
 | SPEC | 需求、设计、测试如何形成一个完整功能 | L2 默认 |
 | PRD | 为什么做、为谁做、做什么 | L3 |
-| SDD | 系统如何实现、如何失败和恢复 | L3 或高风险设计 |
+| SDD | Client/Server 如何实现、如何失败和恢复 | L3 或高风险设计；按受影响端实例化 |
 | TEST-PLAN | 如何系统验证质量与发布条件 | L3 或复杂测试 |
 | ADR | 为什么选择这个关键方案 | 存在重大、长期或难逆决策时 |
 | DELIVERY | 交付基线、最终实现、测试结果、偏移、Align 和交付决定 | L3 正式流程 |
