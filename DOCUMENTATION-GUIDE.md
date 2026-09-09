@@ -10,7 +10,7 @@
 - 开头只保留必要元数据：ID、状态、Owner、更新时间和关联任务/PR。
 - 先写结论，再写原因；规则和 AC 使用可观察、可验证的句子。
 - 只记录无法从代码、Schema、配置或测试中直接还原的信息；机械字段链接权威定义，不手工复制。
-- 不用手工版本表代替 Git 历史。重大方案变化写 ADR，最终实施差异写 DELIVERY。
+- 不用手工版本表代替 Git 历史。重大方案变化写 ADR，最终实施差异写当前等级的交付记录，L3 使用 DELIVERY。
 - 不适用章节删除或写 `N/A：原因`，不得为了完整感填充无效内容。
 
 ## 3. Client/Server 的权威划分
@@ -23,8 +23,8 @@ PRD 保持一份，统一产品目标、业务规则和验收标准，不拆成 
 | 界面状态、输入、生命周期、本地数据、资源与端侧性能 | `CLIENT-SDD.md` 或 SPEC 的 Client 小节 |
 | 领域规则、持久化、事务、并发、幂等、安全与可观测性 | `SERVER-SDD.md` 或 SPEC 的 Server 小节 |
 | 请求/响应、错误码、版本与兼容 | Proto/OpenAPI/Schema 等可执行定义；两端 SDD 引用同一基线 |
-| Client、Server、联调和端到端验证 | `TEST-PLAN.md` / DELIVERY 中的分端记录 |
-| 最终交付与 Align 结论 | 一份 `DELIVERY.md` |
+| Client、Server、联调和端到端验证 | L1/L2：现有任务或 SPEC；L3：TEST-PLAN 与 DELIVERY 中的分端记录 |
+| 最终交付与 Align 结论 | L1：任务/PR；L2：SPEC 或关联 PR；L3：一份 `DELIVERY.md` |
 
 只影响一端时只创建该端 SDD。两端设计都很少时可使用一份 `SDD.md`，并在 `side` 标记为 `shared`；只有两端都存在独立复杂度时才拆为 `CLIENT-SDD.md` 与 `SERVER-SDD.md`。
 

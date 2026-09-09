@@ -4,10 +4,12 @@
 
 ## [Unreleased]
 
+- 分开判断文档规模与验证风险，兼容变化不再按关键词自动升级整套文档。
+- 按任务精简 AI 输出、交付记录和外部目录，统一验收例外、修改后重验及无进展停止条件。
 - 增加 Markdown 文档规范，保持单一 PRD/DELIVERY，并支持按 Client/Server 实例化 SDD 与验证记录。
 - 增加代码、注释与复杂度规范，避免对每个方法强制填写易失真的 Big-O。
 - 增加 FAST/STANDARD/CRITICAL 风险验证档位，明确白盒、冒烟、契约和独立 Review 的触发条件。
-- 引入精简 AgentWorkspace 目录、存储边界、Stop/Resume/Cancel 与最多两轮自动返工规则。
+- 引入精简 AgentWorkspace 目录、存储边界、Stop/Resume/Cancel 与连续两轮无进展时停止当前路线的规则。
 - 增加 2026 AI Harness 与轻量研发工作流研究报告，明确 v0.6 的精简优化方向及不引入的重型机制。
 - 将 Requirement Intake 的事实、假设、Open/Blocked 分类和影响扫描合并进 Ready 与 AI 操作层，不新增默认报告。
 - PRD 增加成功指标、可度量质量要求和假设/待确认状态；SDD 增加设计驱动与权威 Owner 边界。
