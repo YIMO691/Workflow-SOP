@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
-      - name: Check Markdown structure and relative file links
+      - name: Check Markdown structure, file links and anchors
         shell: pwsh
         run: ./scripts/validate-workflow.ps1
+      - name: Exercise validator regression cases
+        shell: pwsh
+        run: ./scripts/test-validate-workflow.ps1 -ScratchRoot '${{ runner.temp }}'
