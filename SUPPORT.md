@@ -5,7 +5,7 @@
 | 遇到的问题 | 查阅位置 |
 |---|---|
 | AI 下一步该做什么，何时需要人决定 | [工作指南](docs/WORKFLOW.md) |
-| 文档写什么、后来怎样继续修改 | [四部分模板](templates/SPEC.md) · [两次提单示例](examples/L2-standard-feature.md) |
+| 文档写什么、后来怎样继续修改 | [四类文档](templates/README.md) · [关联文档与后续修改](examples/L2-standard-feature.md) |
 | AI 读不到项目或规范，长期接入工具 | [工具接入与排查](docs/AI_COLLABORATION.md) |
 | 测试、失败恢复或评审遇到问题 | [工程规则](docs/ENGINEERING_RULES.md) |
 | 暂停、换人或换工具后继续 | [交接规则](docs/WORKFLOW.md#中断与交接) |

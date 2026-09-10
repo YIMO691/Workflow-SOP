@@ -93,19 +93,27 @@
 
 ### 本次精简的旧入口
 
-2026-09-10 按用户要求调整为 AI 读取后执行、开发默认留痕和一份功能说明持续维护。这是工作约定变化，不是新增研究效果结论。整合前内容固定在 [daa538c 基线](https://github.com/YIMO691/Workflow-SOP/tree/daa538c5572c2bcff1a7e85624facf4898561dc6)，不改写历史或在当前树重复放归档副本。
+2026-09-10 较早批次曾调整为 AI 读取后执行、开发默认留痕和一份功能说明持续维护。其中单文档默认已被下方“双端功能的关联文档”修订替代；本节保留当时精简的来源与当前去向。这是工作约定变化，不是新增研究效果结论。整合前内容固定在 [daa538c 基线](https://github.com/YIMO691/Workflow-SOP/tree/daa538c5572c2bcff1a7e85624facf4898561dc6)，不改写历史或在当前树重复放归档副本。
 
 | 旧入口或内容 | 当前去向 |
 |---|---|
 | docs/PRINCIPLES.md；AI_COLLABORATION 中的日常执行、文档、交接段落 | [工作指南](WORKFLOW.md)；AI_COLLABORATION 仅保留工具接入参考 |
-| templates/TASK、PRD、SDD、TEST-PLAN、DELIVERY、ADR.md | [功能说明](../templates/SPEC.md) 的四部分及 [按需方法](../templates/README.md#方法按需参考)，独立小修直接在原任务/PR 留痕 |
+| templates/TASK、PRD、SDD、TEST-PLAN、DELIVERY、ADR.md | [四类关联文档](../templates/README.md) 及 [按需方法](../templates/README.md#方法按需参考)，独立小修直接在原任务/PR 留痕 |
 | WORKFLOW 原六图和可展开细节 | [一张主链路图](WORKFLOW.md#完整链路) 与同页条件说明；复杂分支回原工程规则查询 |
 | L2-standard-feature 原完整运行演练及长示例 | [首次开发与后续修改](../examples/L2-standard-feature.md)，保留收藏失败/恢复的关键条件 |
-| L3-complex-feature 的 PRD、SDD、TEST-PLAN、DELIVERY 和 adr/0001-use-async-export-job.md | [单份异步导出参考](../examples/L3-complex-feature/README.md)，保留取舍、关键风险及未验证边界 |
+| L3-complex-feature 的 PRD、SDD、TEST-PLAN、DELIVERY 和 adr/0001-use-async-export-job.md | [异步导出设计片段](../examples/L3-complex-feature/README.md)，保留取舍、关键风险及未验证边界 |
 | skills/SUPERPOWERS、MATT_POCOCK、REQUIREMENT_ANALYSIS.md | [推荐目录](../skills/README.md) 与本页技能阅读范围；原文链接使用固定提交 |
 | WORKFLOW 原“需求与现状”“约定与文档选择”“评审交付对齐与完成判断”等锚点 | [开始工作](WORKFLOW.md#开始工作)、[维护功能说明](WORKFLOW.md#维护功能说明)、[交付与后续](WORKFLOW.md#交付与后续) |
 
 已有项目采用本版时更新入口和旧路径引用，保留其已有效的功能文档，不批量删除项目记录。需要详细旧写法时在上述固定版本查看对应路径，恢复时通过新提交/PR 实施。
+
+## 双端功能的关联文档
+
+2026-09-10 按用户明确的维护需求修订：新双端功能用功能说明作为统一入口，分别关联客户端实现、服务端实现和验证与验收；后续修改先梳理完整链路再更新受影响章节。这是使用约定调整，不是新增研究结论或已证明的效率提升；一端功能、小修和既有文档继续按实际职责裁剪。
+
+被替代的单文档默认固定在 [3bcba48 基线](https://github.com/YIMO691/Workflow-SOP/tree/3bcba486634bb0a642e93c0aa86e84f7583cffec)。SPEC 保持路径，改为共同需求与导航入口；原“实现说明”去向为分端模板，原“验证与遗留”去向为验证模板，见 [模板目录](../templates/README.md)。WORKFLOW 原“四部分怎样更新”锚点改为 [各文档怎样更新](WORKFLOW.md#各文档怎样更新)，其余当前流程入口保留。
+
+新增三个模板和三个收藏配套例子，仅用于体现不同维护职责与跨文档定位；未恢复整套旧 PRD/SDD/DELIVERY 文件。收藏仍是虚构、未执行示例；未纳入业务项目资料，未验证文档与真实产品的一致性。复查触发：实际采用出现找不到链路、重复维护、文档与代码漂移或分端职责不清时，以具体任务证据修订。
 
 ## 历史内容
 
