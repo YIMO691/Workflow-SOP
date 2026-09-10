@@ -7,7 +7,7 @@
 | 你想解决的问题 | 先读这里 |
 |---|---|
 | 第一次使用，从哪里开始 | [README 快速开始](README.md#从这里开始) |
-| 想看完整链路、分工和异常回流 | [全链路图及展开细节](README.md#完整链路) |
+| 想看完整链路、分工和异常回流 | [全链路图及展开细节](docs/WORKFLOW.md#完整链路) |
 | 想看一项具体任务怎样留下记录 | [收藏功能演练](examples/L2-standard-feature.md#完整运行演练) |
 | Codex / Claude Code 读不到规范 | [AI 接入与排查](docs/AI_COLLABORATION.md#读不到或行为不符时) |
 | 是否需要拆需求、设计或测试文档 | [记录选择](templates/README.md#各文档解决什么问题) |

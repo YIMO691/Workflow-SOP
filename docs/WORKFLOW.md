@@ -2,9 +2,9 @@
 
 本文件是完整流程的唯一正文。阶段帮助定位工作，不构成必须逐个点击的状态机。角色可以由同一人兼任；评审与验收沿用目标项目的责任安排，无须所有工作都由同一位负责人再确认一次。
 
-本流程与 [首页四个工作阶段](../README.md#完整链路) 一致。按问题跳转：[澄清](#需求与现状) · [记录选择](#约定与文档选择) · [处理变化](#实施与变化处理) · [交付判断](#评审交付对齐与完成判断) · [运行反馈](#发布后的观察与反馈)。
+初次使用从 [README](../README.md#从这里开始) 开始。想看人与 AI 的分工、产物和异常回流，直达本页 [全链路图](#完整链路)；需要具体写法时再查 [收藏功能演练](../examples/L2-standard-feature.md#完整运行演练)。
 
-本页给出统一判断规则。先看 [全链路图](../README.md#完整链路) 了解分工、产物与回流；需要具体写法时再读 [完整运行演练](../examples/L2-standard-feature.md#完整运行演练)。
+按问题跳转：[澄清](#需求与现状) · [记录选择](#约定与文档选择) · [处理变化](#实施与变化处理) · [交付判断](#评审交付对齐与完成判断) · [运行反馈](#发布后的观察与反馈)。
 
 ## 过程与责任
 
@@ -144,3 +144,175 @@
 | 缓存、中间产物与原始大日志 | 项目允许的临时/证据位置 | 不提交凭据或过程缓存 |
 
 任务编号、负责人、状态已有系统管理时直接引用。Markdown 是推荐的可版本化载体，等价的现有团队文档或任务工具也可以承载相同信息。项目适配见 [项目约定](../templates/PROJECT-RULES.md)，恢复方式见 [AI 协作](AI_COLLABORATION.md#中断与交接)。
+
+## 完整链路
+
+**先看主线，再展开需要的环节。** 每个阶段同时写明动作和留下的结果；带条件的回流箭头表示发现问题后回到哪里，不表示每次都重走流程。
+
+```mermaid
+flowchart TB
+    U["人：提出目标与授权<br/>输入：项目与原任务"]
+    A["① 理解问题与现状<br/>AI：查项目与工程事实<br/>产物：范围与关键未知"]
+    B["② 明确结果与必要方案<br/>人：决定业务取舍<br/>AI：整理必要方案<br/>产物：验收、设计与增量<br/>配套：验证方法与前提"]
+    C["③ 小步实现与验证<br/>AI：改动、检查、修正<br/>产物：实现与实际证据"]
+    D["④ 评审交付与反馈<br/>自检、评审与验收交付<br/>发布观察按影响安排<br/>产物：结论与遗留去向"]
+    U --> A --> B --> C --> D
+    C -->|约定变化| B
+    D -->|实现或证据缺口| C
+    D -.->|反馈促成修订| A
+    classDef work fill:#EAF2FF,stroke:#3567B7,color:#172B4D
+    classDef decision fill:#FFF3D6,stroke:#9A6700,color:#4D3500
+    classDef output fill:#E5F5EC,stroke:#288353,color:#163D29
+    class U decision
+    class A,B,C work
+    class D output
+```
+
+人参与业务取舍、授权与必要验收；AI 在已授权范围内连续推进，不要求逐框批准。Codex、Claude Code 等原生工具执行搜索、编辑和命令；项目约定、可用工具与真实反馈支撑整个过程，无须额外搭建运行框架。具体条件见本页各节。
+
+<details>
+<summary><strong>展开 ①②：输入怎样变成可实施的约定？看人与 AI 的分工</strong></summary>
+
+```mermaid
+sequenceDiagram
+    actor H as 人／责任人
+    participant A as AI
+    participant P as 项目工程
+    participant R as 原任务／文档
+    H->>A: 给目标、项目入口和授权
+    A->>P: 查指令、代码、契约与测试
+    P-->>A: 实际事实或访问失败
+    Note over A,P: 缺资料或权限时<br/>只暂停依赖动作<br/>补齐重查，不假装已读
+    opt 重要业务取舍尚未决定
+        A-->>H: 给具体场景、推荐与代价
+        H->>A: 按实际责任决定或保留未决
+    end
+    A->>R: 补事实、范围、验收和未知
+    A->>P: 核对方案依赖与验证前提
+    A->>R: 补必要设计、当前增量和检查
+    Note over A,R: 已有内容直接引用，不生成整套文档
+    alt 当前增量条件成立且已授权
+        A->>A: 进入实现与验证
+    else 仍有阻断该增量的缺口
+        A-->>H: 说明缺口与下一步
+        Note over A,P: 继续无依赖的已授权工作
+    end
+```
+
+**本段产物**：原任务或功能说明中的验收、必要设计、增量和检查方式。需要独立维护才拆 [需求说明、技术方案或验证计划](../templates/README.md#各文档解决什么问题)。记录的是已知与待定，不是一次自动批准。
+
+[实施条件](#约定与文档选择) · [AI 接入](AI_COLLABORATION.md#首次接入)
+
+</details>
+
+<details>
+<summary><strong>展开 ③：实现和验证怎样循环？失败、卡住、需求变化分别去哪里</strong></summary>
+
+```mermaid
+flowchart TB
+    S["当前增量条件成立<br/>目标、前提、验证与授权"] --> I["选择一片可观察行为<br/>关联验收与依赖"]
+    I --> E["修改实现与测试<br/>同步受影响说明"]
+    E --> T["实际检查目标场景<br/>核对断言、版本与环境"]
+    T --> Q{"证据支持验收？"}
+    Q -->|支持| R["记录实际结果与证据"]
+    R --> N{"还有未交付范围？"}
+    N -->|下一片条件成立| I
+    N -->|没有| V["进入 ④ 评审交付"]
+    N -->|仍有阻断| P["记录缺口与下一步<br/>只暂停受影响工作"]
+    Q -->|失败或缺证据| F["区分原因，选择修复入口"]
+    F -->|实现缺陷| E
+    F -->|环境或测试问题| X["核对预期与前置<br/>按授权修复"]
+    X --> T
+    F -->|约定变化| B["回 ② 处理需求或设计<br/>更新约定与重验范围"]
+    F -->|缺权限或无新证据| P
+    P -.->|缺口解除后核对| S
+    classDef work fill:#EAF2FF,stroke:#3567B7,color:#172B4D
+    classDef decision fill:#FFF3D6,stroke:#9A6700,color:#4D3500
+    classDef output fill:#E5F5EC,stroke:#288353,color:#163D29
+    class S,I,E,T,X work
+    class Q,N,F,P decision
+    class R,V,B output
+```
+
+**本段产物**：真实改动、测试与证据，留在原任务和项目版本库。命令成功不等于验收充分，一片通过不等于整个任务完成；不能靠删断言、改目标或一直重跑制造通过。
+
+[验证与失败诊断](ENGINEERING_RULES.md#检查没有给出结论时) · [变化处理](#实施与变化处理)
+
+</details>
+
+<details>
+<summary><strong>展开 ④：怎样从改动走到交付？何时完成，何时仍待发布或观察</strong></summary>
+
+```mermaid
+flowchart TB
+    A["实施者自检完整改动<br/>目标、文档与证据对齐"] --> B["按项目责任与风险评审<br/>记录发现与复查"]
+    B --> C{"有阻断或关键缺口？"}
+    C -->|实现或验证问题| F["回 ③ 修复与重验"]
+    C -->|约定变化| G["回 ② 协调与修订"]
+    C -->|没有| D["按项目方式验收交付<br/>合并等动作依授权执行"]
+    D --> E["明确各项实际状态<br/>保留结论、证据与遗留"]
+    E --> P{"需要发布新行为？"}
+    P -->|不需要| Z["完成已满足目标的任务<br/>保留使用反馈入口"]
+    P -->|需要| W["进入下图：发布与观察<br/>开发完成不等于已发布"]
+    classDef work fill:#EAF2FF,stroke:#3567B7,color:#172B4D
+    classDef decision fill:#FFF3D6,stroke:#9A6700,color:#4D3500
+    classDef output fill:#E5F5EC,stroke:#288353,color:#163D29
+    class A,B,D work
+    class C,P decision
+    class E,Z,W,F,G output
+```
+
+仅在本次需要发布时继续，发布观察不是所有任务都必须运行的阶段：
+
+```mermaid
+flowchart TB
+    A["核对发布前提<br/>权限、验证、观察与接手"] --> Q{"条件具备？"}
+    Q -->|没有| K["记录待发布及缺口<br/>只暂停相应发布动作"]
+    K -.->|补齐后重新核对| A
+    Q -->|具备| L["按项目方式发布<br/>记录版本与执行结果"]
+    L -->|发布成功| O["按约定范围与时段观察"]
+    L -->|发布失败| X
+    O --> N{"发现异常？"}
+    N -->|发现| X["保留事实，按授权处置<br/>回退、停用或修复<br/>缺权限时交实际责任人"]
+    X --> Y["按影响回 ①②③<br/>修订需求、实现或检查"]
+    N -->|未发现| M["记录实际结果与范围<br/>观察中则留下一处理入口"]
+    M --> F["保留使用反馈<br/>不外推未观察范围"]
+    F -.->|有依据的新问题| Y
+    classDef work fill:#EAF2FF,stroke:#3567B7,color:#172B4D
+    classDef decision fill:#FFF3D6,stroke:#9A6700,color:#4D3500
+    classDef output fill:#E5F5EC,stroke:#288353,color:#163D29
+    class A,L,O,X work
+    class Q,N,K decision
+    class M,F,Y output
+```
+
+**本段产物**：当前范围内的交付结论、证据、遗留及必要发布观察。开发完成、已验收、已合并、已发布和观察结束分别描述；图中的“无阻断”要有事实依据，不是 AI 自评。
+
+[完成判断](#评审交付对齐与完成判断) · [发布观察与反馈](#发布后的观察与反馈)
+
+</details>
+
+<details>
+<summary><strong>展开共用侧路：暂停、换人或换 AI 后，怎样接回原链路</strong></summary>
+
+```mermaid
+flowchart TB
+    A["任一阶段暂停或换工具"] --> B["原记录留下交接<br/>目标、决定、差异、证据<br/>未决项与已发生外部动作"]
+    B --> C["恢复者核对现场<br/>项目、版本、权限与记录"]
+    C --> D{"恢复条件成立？"}
+    D -->|成立| E["回到尚未完成的阶段<br/>只重验受影响部分"]
+    D -->|不成立| F["补事实或协调缺口<br/>先核实外部动作结果<br/>不盲目重复执行"]
+    F -.->|取得新依据| C
+    classDef work fill:#EAF2FF,stroke:#3567B7,color:#172B4D
+    classDef decision fill:#FFF3D6,stroke:#9A6700,color:#4D3500
+    classDef output fill:#E5F5EC,stroke:#288353,color:#163D29
+    class A,B,C work
+    class D,F decision
+    class E output
+```
+
+[交接字段与恢复规则](AI_COLLABORATION.md#中断与交接)。需要技能时按当前缺口选一个方法，产物回原记录；[技能推荐](../skills/README.md) 不是另一个必经阶段。
+
+</details>
+
+想看一项任务如何填写上述结果，再读 [收藏功能演练](../examples/L2-standard-feature.md#完整运行演练)；它是可选的教学案例，不是理解主线的前置阅读。
