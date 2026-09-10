@@ -40,6 +40,8 @@
 | [Martin Fowler：Test Driven Development](https://martinfowler.com/bliki/TestDrivenDevelopment.html)（2023-12-11） | 实读方法说明与测试列表/失败测试—实现—重构循环，用于区分开发方法和文档名称；不是 TDD 对所有任务效率更高的证据 |
 | [OpenAPI 3.2.0](https://spec.openapis.org/oas/v3.2.0.html)（2025-09-19） | 只读版本、What is the OpenAPI Specification 与文档状态；支持 HTTP 接口机器可读描述这一用途。未审计全部规范，不要求现有项目升级工具链或声称契约测试已通过 |
 
+补充核对：[Google 的代码评审标准](https://google.github.io/eng-practices/review/reviewer/standard.html)，2026-09-10 实读标准、指导与争议处理段落，用于区分阻断项和可后续改进、以事实及持续代码健康支持取舍。它不代表本 SOP 已经通过团队采用验证。
+
 由这些来源推得的本地建议是保留最小充分载体，补强内容及关系；这不是来源机构对本 SOP 的认可。后续项目出现漏验收、设计无法恢复、文档冲突，或相关来源正式更新且影响现用建议时，回到对应模板和条款修订；仅有新版本号不自动更换整套文档。
 
 ## 旧入口去向
