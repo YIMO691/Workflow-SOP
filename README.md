@@ -48,6 +48,8 @@ flowchart LR
 | 一般功能，单份文档可维护 | SPEC：Context、需求、关键设计、验证与交付 | [标准功能](examples/L2-standard-feature.md) |
 | 需要分开协作的复杂任务 | 按实际需要拆 PRD、SDD、TEST-PLAN、DELIVERY；重大决定才写 ADR | [复杂任务](examples/L3-complex-feature/README.md) |
 
+不确定怎么把文档写到能执行，可以直接看 [收藏功能的变更与重验](examples/L2-standard-feature.md#变更与重验示意)、[导出的具体测试步骤](examples/L3-complex-feature/TEST-PLAN.md#可执行场景示意) 和 [按验收定位交付缺口](examples/L3-complex-feature/DELIVERY.md#按验收定位当前缺口)。
+
 旧称 L1/L2/L3 可用于沟通文档规模，不需要登记等级才能开始。高风险增加适用的验证与评审，不自动增加文件数量。模板见 [templates](templates/README.md)；示例均为教学内容，不能冒充业务执行证据。
 
 ## 按问题选择技能
