@@ -1,29 +1,13 @@
-# Project AI workflow instructions
+# Repository instructions
 
-Before working on a task, read `AI-PLAYBOOK.md`. Use `README.md`, `TASK-LEVELS.md`, and only the SOP sections and templates relevant to the current gate and task level.
+Maintain a lightweight, tool-neutral company workflow. This repository contains guidance, templates, examples and documentation checks; do not add an agent runtime, Web app, database or mandatory task-state protocol.
 
-When the task changes code or uses an external AI workspace, also apply `CODE-GUIDE.md`, `DOCUMENTATION-GUIDE.md`, and `AGENT-WORKSPACE.md` only where relevant.
+Read README.md and the relevant sections of docs/WORKFLOW.md, docs/ENGINEERING_RULES.md and docs/AI_COLLABORATION.md. Use templates only when they help. Keep one authoritative location for each rule and update affected links and examples.
 
-## Working agreement
+Honor the user's actual authorization and the target project's instructions. Investigate discoverable facts before asking questions. Distinguish facts, assumptions and unknowns; never invent approval, executed tests, source access or completion. Keep implementation choices flexible within the agreed outcome and boundary.
 
-- Inspect the target repository, its closest instructions, existing docs, code, configuration, interfaces, and tests before asking discoverable questions or proposing detailed design.
-- Distinguish read-only review/diagnosis/planning from authorized implementation. Do not mutate code or external state when the user only requested analysis.
-- Classify the task as L1, L2, or L3 with evidence. L1 uses TASK, L2 uses SPEC, and formal L3 work uses PRD, SDD, TEST-PLAN, and DELIVERY; never upgrade a task merely because templates exist.
-- Report the current gate, evidence, decisions, blockers, and next action using the output contract in `AI-PLAYBOOK.md`.
-- Treat TASK/SPEC/PRD as authority for intent, SDD/ADR as authority for key design, executable schemas/tests/code as evidence of contracts and implementation, and runtime evidence as operational truth.
-- During intake, separate confirmed facts, assumptions, open items, and blockers; run a focused impact and contradiction check without generating separate default reports.
-- Update authoritative documents when behavior or design changes. Do not defer all alignment until the end.
-- Do not claim test success, Align Pass, or Done without inspecting real evidence. Missing executable evidence means Align Fail or an explicit limitation.
-- Before completion, run the Align Gate and delivery cleanup. Record L3 implementation, test results, drift, and the final decision in DELIVERY; classify any drift and resolve it or return to Ready/Build.
-- Bind L3 delivery claims to the actual change, source revision, build/configuration baseline, test environment, and evidence. Self-review alone cannot prove a high-risk hard gate.
-- Keep one PRD and one DELIVERY; split technical design and validation by affected Client/Server side, with both sides referencing the same executable contract.
-- Choose documentation level and FAST, STANDARD, or CRITICAL verification separately. High risk requires appropriate verification and review, not automatically more documents. Follow `TASK-LEVELS.md`; do not interpret CRITICAL as permission to run every possible test.
-- Comment reasons, invariants, lifecycle and failure constraints. Add complexity notes only for non-trivial algorithms or performance-sensitive paths, and do not invent unsupported complexity claims.
-- Preserve project-specific safety, storage, review, and testing rules. More specific instructions closer to the target code take precedence.
-- If the workflow itself creates repeated work or misses a real risk, include evidence-backed process feedback; do not add mandatory policy without approval.
+Do not add document quotas, coverage thresholds, fixed agent roles or approval steps without a demonstrated need. Preserve meaningful code, compatibility, evidence and review requirements; explain gaps rather than manufacturing PASS. The native coding tool owns reasoning, context and tool execution.
 
-## Code review rules
+For documentation structure, naming and GitHub templates follow CONTRIBUTING.md; preserve one authoritative rule and its applicable conditions.
 
-- Flag changes that alter approved behavior, public contracts, persistent data, failure semantics, compatibility, or rollback without updating the corresponding authority source.
-- Flag acceptance claims without a linked test or reproducible manual result.
-- Flag documents that duplicate mechanically generated API/schema details and are likely to drift.
+For repository changes use a focused branch, inspect outgoing content, run scripts/validate-workflow.ps1 and check affected examples. For validator changes also exercise a valid package and broken inputs. Do not commit credentials, business source, raw logs or local workspaces. Keep provenance when reorganizing material. Publishing and merging follow the user's explicit authorization and repository policy.
