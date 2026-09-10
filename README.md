@@ -2,7 +2,7 @@
 
 帮助团队把需求转化为经过验证、便于维护的交付：明确目标与边界，让开发者与 AI 自主实施，留下必要的事实、决定和验证结果。
 
-[完整流程](docs/WORKFLOW.md) · [核心原则](docs/PRINCIPLES.md) · [工程规则](docs/ENGINEERING_RULES.md) · [AI 协作](docs/AI_COLLABORATION.md) · [参与改进](CONTRIBUTING.md)
+[完整流程](docs/WORKFLOW.md) · [核心原则](docs/PRINCIPLES.md) · [工程规则](docs/ENGINEERING_RULES.md) · [AI 协作](docs/AI_COLLABORATION.md) · [技能推荐](skills/README.md) · [参与改进](CONTRIBUTING.md)
 
 **状态：公司通用流程试行稿，尚未证明适用于所有团队。** 本轮整理记录在 CHANGELOG 的 Unreleased，不代表发布稳定版本。适用于新功能、缺陷修复、重构与技术改造；无须安装服务、Web 工作台或工作流引擎，也不绑定模型、语言或操作系统。
 
@@ -50,6 +50,12 @@ flowchart LR
 
 旧称 L1/L2/L3 可用于沟通文档规模，不需要登记等级才能开始。高风险增加适用的验证与评审，不自动增加文件数量。模板见 [templates](templates/README.md)；示例均为教学内容，不能冒充业务执行证据。
 
+## 按问题选择技能
+
+需要把需求问清时参考 `grill-me` / `grill-with-docs`；需要比较设计时参考 Superpowers 或 spec-dev；任务拆分、排查和验收分别选择相关方法。[skills 推荐目录](skills/README.md) 给出固定版本、输入/产物和适用边界，覆盖从讨论到交付的常见卡点。
+
+它是可选工具索引，不是新增流程或自动安装包。明确的小改动直接按本 SOP 实施，已有规格和决定不用再生成一遍。
+
 ## 项目如何接入
 
 在现有项目 README、开发指南或 AI 指令中引用一个明确的 Workflow-SOP commit 或已发布版本。通过 [PROJECT-RULES 模板](templates/PROJECT-RULES.md) 补充实际构建/测试命令、技术约定、资料与操作边界、评审和验收方式；项目已有等价说明时直接引用。
@@ -66,6 +72,7 @@ flowchart LR
 | [WORKFLOW](docs/WORKFLOW.md) | 从需求到交付的完整过程与产物关系 |
 | [ENGINEERING_RULES](docs/ENGINEERING_RULES.md) | 代码、注释、测试、契约与评审质量 |
 | [AI_COLLABORATION](docs/AI_COLLABORATION.md) | AI 自主程度、上下文、决策与恢复 |
+| [skills](skills/README.md) | 可选技能推荐、固定版本与采用差异；不维护另一套核心流程 |
 | templates / examples | 按需记录方式与完整使用示例 |
 | [SOURCES](docs/SOURCES.md) | 来源、旧路径映射和可恢复历史 |
 
