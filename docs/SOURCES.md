@@ -115,6 +115,14 @@
 
 新增三个模板和三个收藏配套例子，仅用于体现不同维护职责与跨文档定位；未恢复整套旧 PRD/SDD/DELIVERY 文件。收藏仍是虚构、未执行示例；未纳入业务项目资料，未验证文档与真实产品的一致性。复查触发：实际采用出现找不到链路、重复维护、文档与代码漂移或分端职责不清时，以具体任务证据修订。
 
+## 裁剪与持续检查的采用依据
+
+2026-09-10：在 [a261bca 基线](https://github.com/YIMO691/Workflow-SOP/tree/a261bcaa1cb1c075f185e003d8ce73bbe7ee89ca) 上明确形式与交付结果的边界，补载体选择示例，并集中重复说明。原文件、既有标题与四类记录职责保留；这是表达和维护方式改进，尚未证明采用效率变化。
+
+[已完成维护案例](../examples/completed-maintenance.md) 来自本仓库 PR #7 的固定实施提交、CI 与合并记录。PR #6 维护时已有的标题链接核对和五类损坏输入检查，本轮转为可重复的仓库回归，并补本页链接失效等场景。原始机器记录留在已有受控任务证据中，不复制进案例；旧结果不作为本轮验证结果。
+
+锚点规则参考 [GitHub：Section links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)，本轮读取标题生成、相对链接和自定义锚点说明；按本仓库实际写法实现有限范围检查，支持与未支持的形式见 [验证方式](../CONTRIBUTING.md#验证方式)。本地检查不等于 GitHub 全部渲染行为或业务验收。
+
 ## 历史内容
 
 旧 [研究](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/research)、[试运行](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/pilots)、[Gate 模拟器与夹具](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/tests/workflow-gate) 留在该 Git 基线，不在新主线重复存放归档副本。

@@ -5,6 +5,7 @@
 | 遇到的问题 | 查阅位置 |
 |---|---|
 | AI 下一步该做什么，何时需要人决定 | [工作指南](docs/WORKFLOW.md) |
+| 怎样裁剪，简单工作完成后留下什么 | [裁剪边界](docs/WORKFLOW.md#怎样裁剪) · [真实维护案例](examples/completed-maintenance.md) |
 | 文档写什么、后来怎样继续修改 | [四类文档](templates/README.md) · [关联文档与后续修改](examples/L2-standard-feature.md) |
 | AI 读不到项目或规范，长期接入工具 | [工具接入与排查](docs/AI_COLLABORATION.md) |
 | 测试、失败恢复或评审遇到问题 | [工程规则](docs/ENGINEERING_RULES.md) |
