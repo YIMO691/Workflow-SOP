@@ -19,11 +19,23 @@
 | [RR-026：Superpowers](https://github.com/YIMO691/ares-ai-software-engineering/blob/86d9dd6cc30c3378b2fc1614a0031197d8f223f5/03_REFERENCE_RESEARCH/09_CROSS_RESEARCH/RR-026_SUPERPOWERS_WORKFLOW.md) | 计划与规格冲突、完整任务审阅、恢复身份；局部辅助脚本观察不证明 Agent 运行失败 |
 | [RR-027：需求技能与切片](https://github.com/YIMO691/ares-ai-software-engineering/blob/86d9dd6cc30c3378b2fc1614a0031197d8f223f5/03_REFERENCE_RESEARCH/09_CROSS_RESEARCH/RR-027_REQUIREMENT_SKILLS_AND_SLICING.md) | 场景辨义、依赖提问、行为切片与迁移例外；静态分析和未执行教学例子，不是效率验证 |
 | [RR-020：超时与验收](https://github.com/YIMO691/ares-ai-software-engineering/blob/86d9dd6cc30c3378b2fc1614a0031197d8f223f5/03_REFERENCE_RESEARCH/09_CROSS_RESEARCH/RR-020_TIMEOUT_RECOVERY_AND_ACCEPTANCE.md) | 修正收藏示例中结果未知与明确失败的混淆；一次读取不能证明迟到写入不会发生 |
-| [Superpowers 固定源](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md) | v6.3.0；推荐子集、实读范围与差异见 [推荐卡](../skills/SUPERPOWERS.md) |
-| [Matt Pocock 固定源](https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/README.md) | 需求/领域建模、规格与切片、测试与审阅；见 [推荐卡](../skills/MATT_POCOCK.md) |
-| [FlameMida 固定源](https://github.com/FlameMida/spec-dev/blob/095eb40b94aceea7322332c5b00903776cdabd01/skills/requirement-analysis/SKILL.md) | 需求设计与现行条款；见 [推荐卡](../skills/REQUIREMENT_ANALYSIS.md)，目录介绍不替代正文 |
+| [Superpowers 固定源](https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md) | v6.3.0；推荐子集、实读范围与差异见 [推荐目录](../skills/README.md) |
+| [Matt Pocock 固定源](https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/README.md) | 需求/领域建模、规格与切片、测试与审阅；见 [推荐目录](../skills/README.md) |
+| [FlameMida 固定源](https://github.com/FlameMida/spec-dev/blob/095eb40b94aceea7322332c5b00903776cdabd01/skills/requirement-analysis/SKILL.md) | 需求设计与现行条款；见 [推荐目录](../skills/README.md)，目录介绍不替代正文 |
 
 本批直接复核推荐涉及的固定原文及版本，以自写说明、模板提示与教学例子落地；没有整包复制技能、安装插件或运行业务。研究报告所在 PR 的纳入状态不改变本 SOP 的试行定位；公司适用性仍需实际采用反馈。原始许可证与第三方声明继续由各固定来源解释，不因推荐扩大再分发权限。
+
+## 技能阅读范围
+
+本次只整合已有阅读记录，未增读实现或运行技能。推荐采用与差异见 [技能目录](../skills/README.md)，原详细卡片通过下方固定基线保留：
+
+| 对象 | 已有实读范围与限制 |
+|---|---|
+| Superpowers v6.3.0 | 相关工作流技能、维护 PR 与辅助脚本见 RR-026。此前局部 helper 观察发现同名计划目录隔离边界；未运行 Agent，不能推断真实任务误读。参考设计、计划、诊断与完成证据，不默认导入强制批准、子代理编排或逐消息重验 |
+| Matt Pocock 固定提交 | grill-me/grilling、grill-with-docs/domain-modeling、to-spec、to-tickets、tdd、code-review、wayfinder，范围见 RR-027。原版任务发布、目录与并行角色不自动采用；HEAD 差异审阅未必覆盖未提交改动；未纳入 in-progress 实验条目 |
+| spec-dev v8.1.0 | requirement-analysis、澄清、场景、计划与执行的相关部分，以及漂移守卫主流程和 eval 输入/期望，范围见 RR-027。当前需求设计八步交接 writing-plans，不能用 Smithery 九阶段简介替代正文；文件同改不证明行为一致，eval 定义不是执行结果。兼容取舍需尊重仍有效的产品契约 |
+
+上述原文可以支持作者如何组织工作这一判断，不能支持执行遵从率或生产效率提升。原许可证和第三方声明仍由固定来源解释，本仓库保留自写摘要与链接。
 
 ## 文档实践的定向核对
 
@@ -72,12 +84,28 @@
 | 旧路径 | 当前入口 |
 |---|---|
 | SOP.md / TASK-LEVELS.md | [完整流程](WORKFLOW.md) 的过程、文档选择和结果判断 |
-| AI-PLAYBOOK.md / AGENT-WORKSPACE.md | [AI_COLLABORATION](AI_COLLABORATION.md) 的自主执行、项目边界和恢复 |
+| AI-PLAYBOOK.md / AGENT-WORKSPACE.md | [工作指南](WORKFLOW.md) 的执行与恢复，以及 [工具接入](AI_COLLABORATION.md) |
 | CODE-GUIDE.md / DOCUMENTATION-GUIDE.md | [ENGINEERING_RULES](ENGINEERING_RULES.md) 及 [模板入口](../templates/README.md) |
 | START-HERE.md / prompts/ | [README 快速开始](../README.md#从这里开始) 和 AI 协作说明 |
-| FORMAL-FEATURE / ALIGNMENT-GATE 模板 | [模板选择](../templates/README.md)，交付对齐合入原有交付记录 |
+| FORMAL-FEATURE / ALIGNMENT-GATE 模板 | [模板选择](../templates/README.md)，交付结论留在原任务/PR，与功能说明互相引用 |
 
-旧路径从本分支主线移出，依赖旧路径的项目在采纳本版本时需更新引用；继续使用旧规范的项目可固定上面的旧 commit，不自动切换。L1/L2/L3 仅保留为文档规模简称，FAST/STANDARD/CRITICAL 不再是通用核心协议。
+旧路径从本分支主线移出，依赖旧路径的项目在采纳本版本时需更新引用；继续使用旧规范的项目可固定上面的旧 commit，不自动切换。L1/L2/L3 仅保留在旧例子的文件路径，不再用于选择一套文档；FAST/STANDARD/CRITICAL 不再是通用核心协议。
+
+### 本次精简的旧入口
+
+2026-09-10 按用户要求调整为 AI 读取后执行、开发默认留痕和一份功能说明持续维护。这是工作约定变化，不是新增研究效果结论。整合前内容固定在 [daa538c 基线](https://github.com/YIMO691/Workflow-SOP/tree/daa538c5572c2bcff1a7e85624facf4898561dc6)，不改写历史或在当前树重复放归档副本。
+
+| 旧入口或内容 | 当前去向 |
+|---|---|
+| docs/PRINCIPLES.md；AI_COLLABORATION 中的日常执行、文档、交接段落 | [工作指南](WORKFLOW.md)；AI_COLLABORATION 仅保留工具接入参考 |
+| templates/TASK、PRD、SDD、TEST-PLAN、DELIVERY、ADR.md | [功能说明](../templates/SPEC.md) 的四部分及 [按需方法](../templates/README.md#方法按需参考)，独立小修直接在原任务/PR 留痕 |
+| WORKFLOW 原六图和可展开细节 | [一张主链路图](WORKFLOW.md#完整链路) 与同页条件说明；复杂分支回原工程规则查询 |
+| L2-standard-feature 原完整运行演练及长示例 | [首次开发与后续修改](../examples/L2-standard-feature.md)，保留收藏失败/恢复的关键条件 |
+| L3-complex-feature 的 PRD、SDD、TEST-PLAN、DELIVERY 和 adr/0001-use-async-export-job.md | [单份异步导出参考](../examples/L3-complex-feature/README.md)，保留取舍、关键风险及未验证边界 |
+| skills/SUPERPOWERS、MATT_POCOCK、REQUIREMENT_ANALYSIS.md | [推荐目录](../skills/README.md) 与本页技能阅读范围；原文链接使用固定提交 |
+| WORKFLOW 原“需求与现状”“约定与文档选择”“评审交付对齐与完成判断”等锚点 | [开始工作](WORKFLOW.md#开始工作)、[维护功能说明](WORKFLOW.md#维护功能说明)、[交付与后续](WORKFLOW.md#交付与后续) |
+
+已有项目采用本版时更新入口和旧路径引用，保留其已有效的功能文档，不批量删除项目记录。需要详细旧写法时在上述固定版本查看对应路径，恢复时通过新提交/PR 实施。
 
 ## 历史内容
 
