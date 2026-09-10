@@ -7,6 +7,7 @@
 | 你想解决的问题 | 先读这里 |
 |---|---|
 | 第一次使用，从哪里开始 | [README 快速开始](README.md#从这里开始) |
+| 想看整个任务怎样实际推进 | [完整运行演练](examples/L2-standard-feature.md#完整运行演练) |
 | Codex / Claude Code 读不到规范 | [AI 接入与排查](docs/AI_COLLABORATION.md#读不到或行为不符时) |
 | 是否需要拆需求、设计或测试文档 | [记录选择](templates/README.md#各文档解决什么问题) |
 | 什么时候可以实施或算完成 | [完整流程](docs/WORKFLOW.md) |
