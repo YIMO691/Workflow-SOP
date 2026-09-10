@@ -2,7 +2,9 @@
 
 Maintain a lightweight, tool-neutral company workflow. This repository contains guidance, templates, examples and documentation checks; do not add an agent runtime, Web app, database or mandatory task-state protocol.
 
-Read README.md and the relevant sections of docs/WORKFLOW.md, docs/ENGINEERING_RULES.md and docs/AI_COLLABORATION.md. Use templates only when they help. Keep one authoritative location for each rule and update affected links and examples.
+These instructions are for maintaining this repository, not a file to copy into downstream projects. Read README.md and docs/WORKFLOW.md, then relevant engineering rules. docs/AI_COLLABORATION.md is optional tool setup reference. Keep one authoritative location for each rule and update affected links and examples.
+
+Development work leaves durable, linked records. For client/server features, use the feature description as the common requirements and navigation entry, linked to client implementation, server implementation and verification/acceptance records. Reuse existing project documents and formats; update affected sections in place and preserve valid manual content. One-sided work omits the unrelated implementation record with a reason; small standalone fixes can use the original issue or PR and update affected feature records. Do not add duplicate task, PRD, SDD or delivery reports, or enforce a file count. Repository maintenance uses its existing PR and documentation as appropriate.
 
 Honor the user's actual authorization and the target project's instructions. Investigate discoverable facts before asking questions. Distinguish facts, assumptions and unknowns; never invent approval, executed tests, source access or completion. Keep implementation choices flexible within the agreed outcome and boundary.
 

@@ -38,8 +38,9 @@ foreach ($file in $files) {
     if ($null -ne $fence) { $issues.Add("Unclosed code fence: $($file.FullName)") }
 }
 
-foreach ($entry in @('README.md','AGENTS.md','CONTRIBUTING.md','docs/PRINCIPLES.md','docs/WORKFLOW.md',
-    'docs/ENGINEERING_RULES.md','docs/AI_COLLABORATION.md','docs/SOURCES.md','templates/README.md','templates/PROJECT-RULES.md')) {
+foreach ($entry in @('README.md','AGENTS.md','CONTRIBUTING.md','templates/SPEC.md','docs/WORKFLOW.md',
+    'docs/ENGINEERING_RULES.md','docs/AI_COLLABORATION.md','docs/SOURCES.md','templates/README.md','templates/PROJECT-RULES.md',
+    'templates/CLIENT.md','templates/SERVER.md','templates/VERIFICATION.md')) {
     if (-not (Test-Path -LiteralPath (Join-Path $repoRoot $entry))) { $issues.Add("Missing current entry: $entry") }
 }
 if ($issues.Count -gt 0) {
