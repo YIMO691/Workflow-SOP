@@ -10,4 +10,6 @@
 | [DELIVERY](DELIVERY.md) | 当前未验证状态与后续工作，不预填通过 |
 | [ADR](adr/0001-use-async-export-job.md) | 使用持久化后台任务的选择理由 |
 
+学习这三种方法可按同一例子读：先在 [SDD](SDD.md) 看 arc42 内容组织与 C4 两张视图，再读 [ADR](adr/0001-use-async-export-job.md) 的方案、后果与检查依据，最后对照 TEST-PLAN 和 DELIVERY 的未验证项。图与决定均是教学提议，真实项目需替换假设。
+
 没有额外的 ALIGNMENT-GATE 文件。交付对齐放在 DELIVERY 中；如果真实项目一份 SPEC 就能维护以上内容，则无需按本示例拆分。多端不自动要求多份 SDD。

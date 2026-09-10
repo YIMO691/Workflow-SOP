@@ -19,6 +19,12 @@ TDD 通常指 Test-Driven Development（测试驱动开发）：用失败测试�
 
 SRS（Software Requirements Specification，软件需求规格说明）适合需要明确软件行为与约束的交付；若客户或项目指定 SRS，按该要求组织，PRD 引用它或由它承载对应软件需求，避免重复。RFC（Request for Comments，征求意见提案）的作用是讨论尚未决定的方案；讨论可以留在现有 SPEC、SDD 或 PR，需要长期保留的重要结论再引用 ADR。这些名称没有新旧替代关系。
 
+## 三种方法如何配合
+
+先用 arc42 检查设计有没有漏掉关键内容；系统关系难说明时，在同一 SDD 内用 C4 表达；重要取舍在 ADR 中记录并由 SDD 引用。MADR 是 ADR 的一种写法，不再新建 MADR 文件。
+
+可直接对照 [arc42 内容定位](SDD.md#用-arc42-组织本说明)、[C4 图与部署说明](../examples/L3-complex-feature/SDD.md#c4-视图)、[带方案比较和验证方式的 ADR](../examples/L3-complex-feature/adr/0001-use-async-export-job.md)。这些都是现有模板和案例的组成部分。
+
 ## 怎样采用成熟方法
 
 下表是本 SOP 的裁剪建议，正式来源、版本和阅读限制见 [来源登记](../docs/SOURCES.md#文档实践的定向核对)。这些方法补充现有文档内容，不形成另一套强制文件包。

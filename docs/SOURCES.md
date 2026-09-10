@@ -34,8 +34,8 @@
 | [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html) | 公开摘要与版本/生命周期信息：需求工程过程和信息项的范围；未读付费全文，不据此复制条款或宣称符合标准。页面仍列 2018 已发布版，并列 DIS 修订在研，草案不当现行要求 |
 | [ISO/IEC/IEEE 42010:2022](https://www.iso.org/standard/74393.html) | 公开摘要与第二版信息：架构描述及其组织；摘要明确不规定开发方法、工具或文档介质，不能用它证明必须提交名为 SDD 的文件。未读全文 |
 | [ISO/IEC/IEEE 29119-3:2021](https://www.iso.org/standard/79429.html) | 公开摘要与第二版信息：测试文档的范围；本轮未读其具体模板，不宣称本 TEST-PLAN 完整实现该标准 |
-| [arc42 overview](https://arc42.org/overview/) 与 [质量要求说明](https://docs.arc42.org/section-10/) | 网页无固定版号；实读章节总览及第 10 节的质量场景说明。选取边界、运行、部署、质量、风险提示，以条件、刺激、响应和度量澄清验收；未套用完整模板或验证架构质量 |
-| [C4 diagrams](https://c4model.com/diagrams) 与 [Container 定义](https://c4model.com/abstractions/container) | 实读四层静态视图及辅助视图的选择说明、Container 定义与运行边界；来源说明无需用全四层。这里只推荐需要时使用上下文/容器视图，未做项目架构建模或绘图工具评价 |
+| [arc42 overview](https://arc42.org/overview/) 与 [质量要求说明](https://docs.arc42.org/section-10/) | 网页无固定版号；实读章节总览及第 10 节的质量场景说明。选取边界、运行、部署、质量、风险提示，以条件、刺激、响应和度量澄清验收；另读 [运行视图](https://docs.arc42.org/section-6/) 与 [部署视图](https://docs.arc42.org/section-7/) 的 Content/Form，分别采用代表性运行步骤与运行单元到设施的映射；未套用完整模板或验证架构质量 |
+| [C4 diagrams](https://c4model.com/diagrams) 与 [Container 定义](https://c4model.com/abstractions/container) | 实读四层静态视图及辅助视图的选择说明、Container 定义与运行边界；来源说明无需用全四层。补读 [容器视图](https://c4model.com/diagrams/container) 与 [图形记法](https://c4model.com/diagrams/notation)，自绘导出系统的两张教学图，标明边界、类型、方向与未知技术；未盘点真实项目或评价绘图工具 |
 | [MADR 4.0.0 模板](https://github.com/adr/madr/blob/4.0.0/template/adr-template.md) | 实读该版本完整模板，参考状态、背景、方案、后果与 confirmation 的内容；大部分元信息在原模板也可选，本 SOP 未导入 YAML 字段或多人审批表 |
 | [Martin Fowler：Test Driven Development](https://martinfowler.com/bliki/TestDrivenDevelopment.html)（2023-12-11） | 实读方法说明与测试列表/失败测试—实现—重构循环，用于区分开发方法和文档名称；不是 TDD 对所有任务效率更高的证据 |
 | [OpenAPI 3.2.0](https://spec.openapis.org/oas/v3.2.0.html)（2025-09-19） | 只读版本、What is the OpenAPI Specification 与文档状态；支持 HTTP 接口机器可读描述这一用途。未审计全部规范，不要求现有项目升级工具链或声称契约测试已通过 |
