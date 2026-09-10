@@ -1,6 +1,6 @@
 # 来源、旧入口与历史基线
 
-本轮以 Workflow-SOP 的既有内容为基础重新整理，保留工程质量经验，减少工具耦合和重复规则。它是改编后的公司试行工作方法，不宣称已验证全公司 ROI，也不引入新的运行系统。
+本文件登记当前试行稿的依据、实读范围、采用边界和旧入口去向。Workflow-SOP 基于既有工程经验整理，减少工具耦合与重复规则；来源不是机构认可、业务验证或效率收益证明。维护时按受影响主题复查，历史材料不自动作为当前操作规范。
 
 ## 固定来源
 
@@ -55,11 +55,23 @@
 
 共用项目约定、只读检查和小任务试用是本 SOP 的本地适配建议；未在两个工具中运行加载或行为对照实验，不是官方认证。安装版本改变、路径或权限变化、漏加载及冲突反馈触发定向复查；只调整受影响入口，不因新版本重写核心流程。普通聊天的文件能力需按实际环境确认，不套用仓库型工具结论。
 
+## GitHub 文档与协作模板的定向核对
+
+核对日期：2026-09-10。以下为在线官方说明，无固定产品版号；用于本仓库的展示、路径和表单适配，不称为统一正文标准或 GitHub 认证。
+
+| 官方来源 | 实读范围与采用边界 |
+|---|---|
+| [About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) | 用途、开始方式、帮助/维护入口、标题导航与相对链接；据此整理首页，详细工程内容留在对应正文 |
+| [PR 模板配置](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) | 支持路径、正文提示与默认分支生效条件；保留单份 Markdown PR 模板，不新增审批规则 |
+| [Issue 模板配置](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)、[Issue 表单语法](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms) 与 [字段语法](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema) | 实读目录/生效条件、name/description/body、markdown/textarea、id/attributes/validations；将原表单的信息拆成可回答的问题，不自动分派或新增标签 |
+
+四阶段名称、中文记录名与按文档用途组织章节，是本 SOP 的本地编辑约定；对应写法见 [贡献指南](../CONTRIBUTING.md#文档职责与写法)。表单机制变化、断链、填写困难或描述冲突时定向修订；本地检查不证明 GitHub 线上表单已经启用。
+
 ## 旧入口去向
 
 | 旧路径 | 当前入口 |
 |---|---|
-| SOP.md / TASK-LEVELS.md | [WORKFLOW](WORKFLOW.md) 的过程、文档选择和结果判断 |
+| SOP.md / TASK-LEVELS.md | [完整流程](WORKFLOW.md) 的过程、文档选择和结果判断 |
 | AI-PLAYBOOK.md / AGENT-WORKSPACE.md | [AI_COLLABORATION](AI_COLLABORATION.md) 的自主执行、项目边界和恢复 |
 | CODE-GUIDE.md / DOCUMENTATION-GUIDE.md | [ENGINEERING_RULES](ENGINEERING_RULES.md) 及 [模板入口](../templates/README.md) |
 | START-HERE.md / prompts/ | [README 快速开始](../README.md#从这里开始) 和 AI 协作说明 |

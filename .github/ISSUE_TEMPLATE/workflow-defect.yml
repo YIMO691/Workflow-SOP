@@ -1,11 +1,35 @@
 name: 规范或模板缺陷
-description: 报告错误链接、规则冲突或不可用说明
-title: "[Fix] "
+description: 报告断链、规则冲突、错误或不可用说明
+title: '[缺陷] '
 body:
+  - type: markdown
+    attributes:
+      value: 请先查找已有讨论。只提供获准共享的摘要，不提交凭据、业务源码或原始运行日志；敏感问题通过团队已有私密渠道联系维护者。
+  - type: textarea
+    id: location
+    attributes:
+      label: 受影响位置与版本
+      description: 填写文件/章节/链接及所用 commit 或版本；无法确认的内容注明未知。
+    validations:
+      required: false
   - type: textarea
     id: defect
     attributes:
-      label: 问题与影响
-      description: 受影响版本/文件、实际场景、预期与观察结果；无需原始敏感日志。
+      label: 预期与实际情况
+      description: 在哪个使用场景下发现什么错误或冲突？原本需要什么结果？两项分别说明。
     validations:
       required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤与影响
+      description: 怎样定位问题、影响什么操作或判断？只提供可分享的最小事实；无需原始日志。
+    validations:
+      required: false
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修正方式（可选）
+      description: 已有想法可补充修改建议及需要同步的引用；不会修复也可以提交缺陷。
+    validations:
+      required: false

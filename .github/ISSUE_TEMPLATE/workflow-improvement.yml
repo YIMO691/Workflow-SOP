@@ -1,11 +1,35 @@
 name: 流程优化建议
-description: 用实际问题改进或精简流程
-title: "[Improve] "
+description: 根据实际困难提出保留、补充或删减建议
+title: '[改进] '
 body:
+  - type: markdown
+    attributes:
+      value: 请先查找已有讨论。只提供获准共享的摘要，不提交凭据、业务源码或原始运行日志；敏感问题通过团队已有私密渠道联系维护者。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 实际问题与影响
+      description: 说明重复劳动、漏检、等待或交接困难；尚未采用的设想请标明，不编造观察。
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 相关版本与章节
+      description: 说明采用的 commit/版本、条款或模板位置；不确定可注明未知。
+    validations:
+      required: false
   - type: textarea
     id: proposal
     attributes:
-      label: 场景、影响与建议
-      description: 说明重复劳动、漏检、交接困难或其他实际问题，以及建议怎样调整。
+      label: 建议改变什么
+      description: 希望保留、调整或删除哪种做法？已有可行替代时说明。
     validations:
-      required: true
+      required: false
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: 预期收益、代价与确认方式
+      description: 如何观察改善是否发生，可能增加什么负担？预期收益与实际证据分开。
+    validations:
+      required: false

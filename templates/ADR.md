@@ -1,6 +1,6 @@
 # 重要决策：名称
 
-用于值得长期保留的选择理由；常规可逆细节留在原技术方案。参考 [完整示例](../examples/L3-complex-feature/adr/0001-use-async-export-job.md)，MADR 名称解释在 [写作参考](README.md#三种方法如何配合)。
+> 用于值得长期保留的选择理由；常规可逆细节留在原技术方案。参考 [完整示例](../examples/L3-complex-feature/adr/0001-use-async-export-job.md)，MADR 名称解释在 [写作参考](README.md#三种方法如何配合)。
 
 ## 当前状态与背景
 

@@ -6,13 +6,13 @@
 
 ## 什么时候有帮助
 
-需求涉及多模块、既有契约与方案取舍时，先核对项目事实，再比较不同方案能交付什么，最后用具体行为场景写出验收。需要输入原始需求、已确认范围、当前契约与可访问的工程事实；产物是现有 SPEC 中的方案理由、关键场景与仍待决定事项。
+需求涉及多模块、既有契约与方案取舍时，先核对项目事实，再比较不同方案能交付什么，最后用具体行为场景写出验收。需要输入原始需求、已确认范围、当前契约与可访问的工程事实；产物是现有功能说明中的方案理由、关键场景与仍待决定事项。
 
 特别值得参考：区分探索与承诺交付、事实先查、术语以场景澄清、旧规格的取代与保留关系、每条行为怎样被实际观察。明确的小修不必因此进入完整设计管线。
 
 ## 与本 SOP 的差异
 
-- 原版逐题澄清并有多道方案/设计/规格确认；本 SOP 的实际授权、问题依赖与开始条件以 [WORKFLOW](../docs/WORKFLOW.md) 为准。已有决定继续使用。
+- 原版逐题澄清并有多道方案/设计/规格确认；本 SOP 的实际授权、问题依赖与开始条件以 [完整流程](../docs/WORKFLOW.md) 为准。已有决定继续使用。
 - 原版包含指定代理数量、目录、每计划固定分文件、进度表与守卫；本 SOP 复用原生工具和既有任务记录，不因为参考需求方法自动引入这些配置。
 - [设计原则](https://github.com/FlameMida/spec-dev/blob/095eb40b94aceea7322332c5b00903776cdabd01/skills/writing-plans/references/design-principles.md) 倾向不留兼容垫片，但保留产品/部署规则中的当前合同。实际旧端与迁移按 [工程规则](../docs/ENGINEERING_RULES.md#设计契约与分端协作) 决定，不能截取一句“不兼容”忽略线上消费者。
 - [漂移守卫](https://github.com/FlameMida/spec-dev/blob/095eb40b94aceea7322332c5b00903776cdabd01/guardrail/check-spec-drift.mjs) 的同改文件判断不证明行为一致；[eval 定义](https://github.com/FlameMida/spec-dev/blob/095eb40b94aceea7322332c5b00903776cdabd01/skills/requirement-analysis/evals/evals.json) 也不是已执行结果。此处不安装守卫或按模板生成通过记录。

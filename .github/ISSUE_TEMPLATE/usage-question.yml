@@ -1,11 +1,28 @@
 name: 使用问题
-description: 说明实际使用场景和疑问
-title: "[Question] "
+description: 说明流程、模板或 AI 接入的具体疑问
+title: '[问题] '
 body:
+  - type: markdown
+    attributes:
+      value: 请先查找已有讨论。只提供获准共享的摘要，不提交凭据、业务源码或原始运行日志；敏感问题通过团队已有私密渠道联系维护者。
   - type: textarea
     id: context
     attributes:
       label: 使用场景与问题
-      description: 提供所用规范版本、目标、已尝试内容和疑问；请勿上传敏感资料。
+      description: 想完成什么，在哪一步或哪条说明卡住？只需提供与问题有关的事实。
     validations:
       required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 所用版本与相关位置
+      description: 填写 commit/版本、文档章节或链接；涉及 AI 接入时说明工具名称和使用方式。不确定可注明未知。
+    validations:
+      required: false
+  - type: textarea
+    id: attempts
+    attributes:
+      label: 已尝试内容与希望得到的帮助
+      description: 简述已尝试的步骤、观察和希望澄清的判断；没有尝试可说明。
+    validations:
+      required: false
