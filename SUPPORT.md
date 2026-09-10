@@ -1,9 +1,8 @@
 # 获取帮助
 
-- 第一次了解项目：先看 [README](README.md)，再按 [START-HERE](START-HERE.md) 启动任务。
-- 不确定如何分级、选模板或使用 AI：创建“使用问题”Issue。
-- 发现错误链接、规则冲突或不可执行模板：创建“规范或模板缺陷”Issue。
-- 有真实案例支持的流程改进：创建“流程优化建议”Issue。
-- 涉及秘密、个人数据或安全漏洞：按 [SECURITY](SECURITY.md) 私密报告，不创建普通 Issue。
+- 使用流程：先看 [README](README.md) 与 [完整流程](docs/WORKFLOW.md)。
+- 模板选择与项目接入：看 [templates](templates/README.md) 和 [PROJECT-RULES](templates/PROJECT-RULES.md)。
+- 不确定、规则冲突或改进建议：使用仓库对应 Issue，提供实际场景、所用版本、影响和已尝试步骤。
+- 涉及敏感信息：按 [SECURITY](SECURITY.md) 通过团队已建立的私密渠道反馈。
 
-提问时提供目标、已经尝试的步骤和当前阻断即可；如涉及规则差异，注明使用的分支或 Commit。无需预先掌握全部术语，不必上传原始运行日志或敏感材料。
+无需掌握全部术语，也不必上传原始运行日志。请区分规范说明的问题与目标项目的实际缺陷；本仓库不提供运行服务或工具托管支持。
