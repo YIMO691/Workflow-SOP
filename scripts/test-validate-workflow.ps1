@@ -97,3 +97,5 @@ $report = [IO.Path]::GetFullPath((Join-Path $runRoot 'results.json'))
 Write-Output "Regression evidence: $report"
 if (@($results | Where-Object { -not $_.passed }).Count) { exit 1 }
 Write-Output "Passed $($results.Count) validator regression cases."
+# Expected failures leave LASTEXITCODE=1; CI dot-sourcing must receive the suite result.
+exit 0
