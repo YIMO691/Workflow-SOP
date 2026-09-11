@@ -9,13 +9,13 @@
 在能访问目标项目的 AI 会话中发送：
 
 ```text
-请读取 https://github.com/YIMO691/Workflow-SOP 的 README 和 docs/WORKFLOW.md，按指南完成任务。
-先检查目标项目指令、代码和已有功能文档，说明本次影响的需求、客户端、服务端及验证。
-实施过程中更新受影响的文档，最后给出功能入口、改动、实际验证结果和未完成项。
+采用 Workflow-SOP：<本地路径或可读取的固定版本地址>。
+从 docs/WORKFLOW.md 的“执行速查”开始，按 README 的读取表查涉及的细节。
+先核对目标项目指令、代码和已有记录，在授权范围内完成任务；按速查说明实际结果与缺口。
 任务：<描述要解决的问题，或提供已有提单>
 ```
 
-有特殊操作边界时一并说明。首次使用无须安装技能或部署服务；资料读不到时由 AI 说明缺口，取得获准读取的内容后继续。
+把占位位置换成已有本地副本或 [仓库](https://github.com/YIMO691/Workflow-SOP) 中选定的版本，并说明特殊操作边界。首次使用无须安装技能或部署服务；资料读不到时由 AI 说明缺口，取得获准读取的内容后继续。
 
 ## 完成后提交什么
 
@@ -81,7 +81,16 @@ flowchart TB
 
 ## 给 AI 的执行入口
 
-先读 [工作指南](docs/WORKFLOW.md)，再查目标项目指令、功能入口及相关实现与证据。记录缺失时参考 [模板用法](templates/README.md)；遇到具体问题再查 [工程规则](docs/ENGINEERING_RULES.md)、[技能推荐](skills/README.md) 或 [工具接入](docs/AI_COLLABORATION.md)。此仓库的 `AGENTS.md` 仅用于维护本仓库。
+首次采用先看本页链路图与下表；每个任务从 [执行速查](docs/WORKFLOW.md#执行速查) 和目标项目事实开始。表中按章节读取，信息足够后进入工作；无需每轮重读全仓。此仓库的 `AGENTS.md` 仅用于维护本仓库。
+
+| 当前任务或问题 | SOP 最小读取范围 | 再补读的条件 |
+|---|---|---|
+| 每个实施任务 | 执行速查；目标项目指令、相关代码、功能入口和证据 | 按下列情况读取对应正文；项目要求仍适用 |
+| 独立小修或文档维护 | [怎样裁剪](docs/WORKFLOW.md#怎样裁剪)、[交付与后续](docs/WORKFLOW.md#交付与后续) | 发现接口、权限或数据影响时，补读相应工程规则 |
+| 新增或修改功能 | [维护功能说明](docs/WORKFLOW.md#维护功能说明)、[验证覆盖与方法](docs/ENGINEERING_RULES.md#验证覆盖与方法)、交付与后续 | 缺少记录时读 [载体选择](templates/README.md#按现状选择载体) 及涉及的模板；已有格式直接复用 |
+| 验收措辞不清、结果缺证据、维护入口断链 | [三个正反例](examples/decision-examples.md) | 对照例子定位问题后，回到对应规则与原任务 |
+| 检查失败、重要约定改变或任务中断 | [变化处理](docs/WORKFLOW.md#实施与变化处理)、[诊断](docs/ENGINEERING_RULES.md#检查没有给出结论时) 或 [交接](docs/WORKFLOW.md#中断与交接) | 只取当前异常涉及的章节 |
+| 长期接入、选工具或核对来源 | [工具接入](docs/AI_COLLABORATION.md)、[技能推荐](skills/README.md) 或 [来源](docs/SOURCES.md) | 这些是专题参考，不在日常任务默认读取范围内 |
 
 想先看一次工作怎样结束，读 [已完成的轻量维护案例](examples/completed-maintenance.md)；需要两端契约、未知结果恢复与后续需求分析时，再读 [收藏教学示例](examples/L2-standard-feature.md)。
 
