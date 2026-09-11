@@ -20,6 +20,13 @@ body:
     validations:
       required: false
   - type: textarea
+    id: adoption
+    attributes:
+      label: 采用观察（如有）
+      description: 写任务类型与原记录入口；有记录时补澄清轮次、返工次数、文档维护耗时及原因，说明统计范围和实测或估计。未记录写未知，教学推演不能充当实际采用结果。
+    validations:
+      required: false
+  - type: textarea
     id: proposal
     attributes:
       label: 建议改变什么
