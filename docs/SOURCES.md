@@ -123,6 +123,28 @@
 
 锚点规则参考 [GitHub：Section links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)，本轮读取标题生成、相对链接和自定义锚点说明；按本仓库实际写法实现有限范围检查，支持与未支持的形式见 [验证方式](../CONTRIBUTING.md#验证方式)。本地检查不等于 GitHub 全部渲染行为或业务验收。
 
+## 研究用于生成的最小实施
+
+2026-09-16：根据 [公开实践复盘](reports/2026-09-16-workflow-retrospective.md) 和用户对“怎样实施”的追问，将 [优化方案](plans/2026-09-16-workflow-optimization.md) 中的一部分接入工作指南、工程规则和原模板。来源是当前案例与使用反馈，不是重新验证论文结论、模型能力或普遍效率。新增 [异步刷新例子](../examples/decision-examples.md#把异步研究变成一次实现) 包含手工构造的错误/修正代码及受控行为检查，不能作为模型生成对照或真实项目验收。
+
+`examples/decision-examples.md` 的一级标题由“三个正反例：怎样判断记录是否有用”改为“操作正反例：从记录到代码生成”，文件路径和原三个小节标题保留；旧内容见 [4a0032a 基线](https://github.com/YIMO691/Workflow-SOP/blob/4a0032a8ff1c26526e3bfa88da9abb23d12ef756/examples/decision-examples.md)。原模板章节、项目格式和有效规则继续适用；采用者无需迁移文件，新提示仅在相关任务中使用。没有真实采用记录时不宣称方法已验证；额外负担、无效反馈或前提变化触发修订。
+
+## 需求理解与复杂度治理的方向输入
+
+2026-09-16：实读用户提供的《AI 需求理解与复杂度治理：面向 Coding Agent / Harness 的研究理论手册 v1.0》及《AI 需求理解与复杂度治理研究包 v1.0》。包内七份资料包括 README、理论手册、工作流优化蓝图、证据矩阵与文献地图、规则模板与 Prompt、验证实验方案和参考文献；包内理论正文与单独提供的手册一致。原资料未在本仓库公开，本文保留标题、版本和采用范围，不公开本地路径或把原包作为日常必读附件。
+
+本次采用其最小充分规格、项目查证、未知分类、新增复杂度举证、按风险裁剪及效果评价的方向，更新 [首页主图](../README.md#整个流程)、[目标能力](WORKFLOW.md#目标能力与完成边界) 与 [原优化方案](plans/2026-09-16-workflow-optimization.md)。这些是研究综合提出的候选方法，未在本轮重新核验引用文献，也未证明在本项目中提高正确性或降低成本。验证方式按验收行为选择，不照搬统一证据排名；已有授权继续有效，不把每个 Gate 转化为人工审批。
+
+此前方向批次仅更新目标链路与完成程度；后续实施范围见下节。没有直接采用原包建议的完整目录、固定阶段、实验任务数或收益阈值。首页“整个流程”、工作指南“完整链路”和方案“3. 优化后的主链”锚点保留；旧两张图见 [abcf638 基线](https://github.com/YIMO691/Workflow-SOP/tree/abcf638b8d6c71842a9ae6367212ebed9e55576f)。主图现仅在首页维护，方案引用同一入口。若实际使用出现额外填表、重复提问、无依据扩展或验收缺口，应据真实任务修订；未来引用外部研究作事实依据时另行定向核验。
+
+## 需求与复杂度规则的实施
+
+2026-09-16：在上述研究输入和已确认方向上，将候选方法落实到 [需求整理](WORKFLOW.md#整理最小充分需求)、[未知分流](WORKFLOW.md#未知怎样处理)、[复杂度判断](ENGINEERING_RULES.md#最小方案与复杂度)、[验证条件](WORKFLOW.md#提前核对验证条件) 及 [效果与成本](WORKFLOW.md#用实际任务修订流程)。原模板只承载必要记录；案例补当前事实、未知、方案前提、失败反馈及迁移操作，不新增研究资料必读要求。
+
+相对 [方向批次基线](https://github.com/YIMO691/Workflow-SOP/tree/6acc0b02d5977b78e2d0928a65444ab2f1d03d4a)，保留现有路径、原主要标题、四类维护职责和首页唯一主图，新增小节可按需读取。没有照搬原包的固定阶段、完整目录、统一证据排名、任务数或收益门槛；必要维护和兼容可以要求额外结构，已获授权的动作不重复审批。
+
+本轮证据是文档检查和场景走查，未进行模型对照或真实业务验收。研究来源不等于所有具体条款已有因果证据；采用效果与成本仍按真实任务核实。出现可查事实反复提问、关键未知被猜定、无依据扩展、环境缺口迟发现或流程负担增加时复查相关规则。
+
 ## 历史内容
 
 旧 [研究](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/research)、[试运行](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/pilots)、[Gate 模拟器与夹具](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/tests/workflow-gate) 留在该 Git 基线，不在新主线重复存放归档副本。
