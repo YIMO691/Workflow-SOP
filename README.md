@@ -13,6 +13,7 @@ Workflow-SOP 入口：https://github.com/YIMO691/Workflow-SOP/blob/main/README.m
 优先沿用项目已采用的位置和版本；首次使用可读取此入口。仅在使用者选择跟随更新时，新任务读取 main 当前版本；同一任务保持已读版本。
 从 docs/WORKFLOW.md 的“执行速查”开始，按 README 的读取表查涉及的细节。
 先核对目标项目指令、代码和已有记录，在授权范围内完成任务；按速查说明实际结果与缺口。
+涉及代码生成质量改进时，按工作指南“把研究用到一次代码生成”，将相关事实或方法用于具体选择，先检查首个关键增量，再完成整个范围。
 任务：<描述要解决的问题，或提供已有提单>
 ```
 
@@ -91,7 +92,8 @@ flowchart TB
 | 每个实施任务 | 执行速查；目标项目指令、相关代码、功能入口和证据 | 按下列情况读取对应正文；项目要求仍适用 |
 | 独立小修或文档维护 | [怎样裁剪](docs/WORKFLOW.md#怎样裁剪)、[交付与后续](docs/WORKFLOW.md#交付与后续) | 发现接口、权限或数据影响时，补读相应工程规则 |
 | 新增或修改功能 | [维护功能说明](docs/WORKFLOW.md#维护功能说明)、[验证覆盖与方法](docs/ENGINEERING_RULES.md#验证覆盖与方法)、交付与后续 | 缺少记录时读 [载体选择](templates/README.md#按现状选择载体) 及涉及的模板；已有格式直接复用 |
-| 验收措辞不清、结果缺证据、维护入口断链 | [三个正反例](examples/decision-examples.md) | 对照例子定位问题后，回到对应规则与原任务 |
+| 想把代码质量研究用于当前开发 | [具体实施步骤](docs/WORKFLOW.md#把研究用到一次代码生成)、[生成时的工程判断](docs/ENGINEERING_RULES.md#生成时的工程判断) | 不清楚怎样操作时，看 [异步刷新示例](examples/decision-examples.md#把异步研究变成一次实现)，再回到实际项目 |
+| 验收措辞不清、结果缺证据、维护入口断链 | [操作正反例](examples/decision-examples.md) | 对照例子定位问题后，回到对应规则与原任务 |
 | 检查失败、重要约定改变或任务中断 | [变化处理](docs/WORKFLOW.md#实施与变化处理)、[诊断](docs/ENGINEERING_RULES.md#检查没有给出结论时) 或 [交接](docs/WORKFLOW.md#中断与交接) | 只取当前异常涉及的章节 |
 | 长期接入、选工具或核对来源 | [工具接入](docs/AI_COLLABORATION.md)、[技能推荐](skills/README.md) 或 [来源](docs/SOURCES.md) | 这些是专题参考，不在日常任务默认读取范围内 |
 
@@ -101,7 +103,7 @@ flowchart TB
 
 [排行榜实践复盘（公开整理版）](docs/reports/2026-09-16-workflow-retrospective.md)记录工作流搭建、代码生成质量研究、真实重构与用户纠偏；内部实现和原始证据未公开。[全流程优化方案](docs/plans/2026-09-16-workflow-optimization.md)给出生成前、生成中、交付及接续的补强位置、文件清单和分批验收。
 
-这些是维护参考，不加入每次任务的必读范围。方案中的后续优化尚未实施；当前执行仍以工作指南和项目有效要求为准。
+这些是维护参考，不加入每次任务的必读范围。当前分支已补入研究用于生成的最小操作、模板提示及教学示例，其余实施状态见方案；实际项目收益仍待验证，采用时沿用已选择的版本策略。
 
 [获取帮助](SUPPORT.md) · [贡献与检查](CONTRIBUTING.md) · [变更记录](CHANGELOG.md) · [来源与历史](docs/SOURCES.md) · [安全说明](SECURITY.md)
 

@@ -123,6 +123,12 @@
 
 锚点规则参考 [GitHub：Section links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)，本轮读取标题生成、相对链接和自定义锚点说明；按本仓库实际写法实现有限范围检查，支持与未支持的形式见 [验证方式](../CONTRIBUTING.md#验证方式)。本地检查不等于 GitHub 全部渲染行为或业务验收。
 
+## 研究用于生成的最小实施
+
+2026-09-16：根据 [公开实践复盘](reports/2026-09-16-workflow-retrospective.md) 和用户对“怎样实施”的追问，将 [优化方案](plans/2026-09-16-workflow-optimization.md) 中的一部分接入工作指南、工程规则和原模板。来源是当前案例与使用反馈，不是重新验证论文结论、模型能力或普遍效率。新增 [异步刷新例子](../examples/decision-examples.md#把异步研究变成一次实现) 包含手工构造的错误/修正代码及受控行为检查，不能作为模型生成对照或真实项目验收。
+
+`examples/decision-examples.md` 的一级标题由“三个正反例：怎样判断记录是否有用”改为“操作正反例：从记录到代码生成”，文件路径和原三个小节标题保留；旧内容见 [4a0032a 基线](https://github.com/YIMO691/Workflow-SOP/blob/4a0032a8ff1c26526e3bfa88da9abb23d12ef756/examples/decision-examples.md)。原模板章节、项目格式和有效规则继续适用；采用者无需迁移文件，新提示仅在相关任务中使用。没有真实采用记录时不宣称方法已验证；额外负担、无效反馈或前提变化触发修订。
+
 ## 历史内容
 
 旧 [研究](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/research)、[试运行](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/pilots)、[Gate 模拟器与夹具](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/tests/workflow-gate) 留在该 Git 基线，不在新主线重复存放归档副本。
