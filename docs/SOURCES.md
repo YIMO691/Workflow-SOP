@@ -145,6 +145,14 @@
 
 本轮证据是文档检查和场景走查，未进行模型对照或真实业务验收。研究来源不等于所有具体条款已有因果证据；采用效果与成本仍按真实任务核实。出现可查事实反复提问、关键未知被猜定、无依据扩展、环境缺口迟发现或流程负担增加时复查相关规则。
 
+## 新人使用入口与项目采用
+
+2026-09-16：根据用户对新人怎样在工作中使用 AI 的反馈，将已有内容重新连接为首页日常入口、项目负责人首次准备、首次任务操作和交付核对。以 [c939957 基线](https://github.com/YIMO691/Workflow-SOP/tree/c93995740655b8ce14b4045b64632487e8499783) 为起点，保留主规则、原路径、主要标题及完整流程图；小修例子只展开教学步骤，不增加任务必交章节或阶段审批。
+
+本轮定向读取 [GitHub 分支保护说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) 中的必要状态检查、评审和绕过权限条件，用于区分文档提示与实际仓库配置；没有修改任何业务仓库的保护设置。参考 [Google Small CLs](https://google.github.io/eng-practices/review/developer/small-cls.html) 对聚焦改动、审查和反馈的说明，建议首次任务选择可理解的范围；不照搬固定大小、测试配额或组织制度。
+
+以上支持机制选择，不证明本版能让新人独立开发。当前教学例子没有真实业务执行结果，也没有新人试用记录；首次接入与后续任务需在目标项目核实实际工具、行为、评审和人工负担。出现找不到开工入口、照抄维护配置、误把文档 CI 当业务验证或新增带教负担时复查。
+
 ## 历史内容
 
 旧 [研究](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/research)、[试运行](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/pilots)、[Gate 模拟器与夹具](https://github.com/YIMO691/Workflow-SOP/tree/60ccde7bb1c05b90cb55c5ec603f14366d27ae64/tests/workflow-gate) 留在该 Git 基线，不在新主线重复存放归档副本。
